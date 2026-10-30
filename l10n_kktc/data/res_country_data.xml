@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- No ISO 3166 code exists; CT follows the gov.ct.tr domain -->
+    <record id="ct" model="res.country">
+        <field name="name">Turkish Republic of Northern Cyprus</field>
+        <field name="code">CT</field>
+        <field name="currency_id" ref="base.TRY"/>
+        <field name="phone_code">90</field>
+        <field name="address_format" eval="'%(street)s\n%(street2)s\n%(zip)s %(city)s/%(state_name)s\n%(country_name)s'"/>
+    </record>
+</odoo>

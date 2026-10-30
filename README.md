@@ -16,6 +16,7 @@ Her Odoo sürümü ayrı bir daldadır:
 
 | Odoo | Dal |
 |---|---|
+| 18.0 | [`18.0`](https://github.com/Odoo-Tr/odoo-turkiye/tree/18.0) |
 | 19.0 | [`19.0`](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0) |
 | 20.0 | [`20.0`](https://github.com/Odoo-Tr/odoo-turkiye/tree/20.0) |
 

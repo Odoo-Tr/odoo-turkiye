@@ -6,7 +6,7 @@ Odoo Türkiye'nin açık kaynak Türkiye modüllerinde neyin yayında olduğu, s
 
 ## Yayında
 
-Odoo 19 ve 20'de çalışır, Community sürümünde kurulabilir.
+Odoo 18, 19 ve 20'de çalışır, Community sürümünde kurulabilir.
 
 - **[TCMB Döviz Kurları](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_tcmb_rates)** (`l10n_tr_tcmb_rates`): Döviz kurlarını her gün TCMB gösterge kurları bülteninden otomatik günceller.
 - **[Faturada Yazıyla Tutar](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_amount_in_words)** (`l10n_tr_amount_in_words`): Fatura çıktısına "Yalnız: ... Türk Lirası ... Kuruş" satırını ekler.

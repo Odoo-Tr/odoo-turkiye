@@ -1,0 +1,6 @@
+"id","name","country_id","name@tr"
+"kktc_tax_group_kdv_0","VAT 0%","l10n_kktc.ct","KDV %0"
+"kktc_tax_group_kdv_5","VAT 5%","l10n_kktc.ct","KDV %5"
+"kktc_tax_group_kdv_10","VAT 10%","l10n_kktc.ct","KDV %10"
+"kktc_tax_group_kdv_16","VAT 16%","l10n_kktc.ct","KDV %16"
+"kktc_tax_group_kdv_20","VAT 20%","l10n_kktc.ct","KDV %20"

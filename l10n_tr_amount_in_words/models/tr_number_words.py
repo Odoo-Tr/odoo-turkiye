@@ -1,10 +1,10 @@
-"""Tutarları Türkçe yazıya çevirir: 1234.56 TRY -> "Bin İki Yüz Otuz Dört Türk Lirası Elli Altı Kuruş"."""
+"""Convert amounts to Turkish words: 1234.56 TRY -> "Bin İki Yüz Otuz Dört Türk Lirası Elli Altı Kuruş"."""
 
 ONES = ["", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"]
 TENS = ["", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"]
 SCALES = ["", "bin", "milyon", "milyar", "trilyon", "katrilyon"]
 
-# Para birimi kodu -> (ana birim, alt birim)
+# Currency code -> (unit, subunit)
 CURRENCY_WORDS = {
     "TRY": ("Türk Lirası", "Kuruş"),
     "USD": ("ABD Doları", "Sent"),
@@ -35,7 +35,7 @@ def _three_digits(number):
 
 
 def integer_to_words(number):
-    """Pozitif tam sayıyı Türkçe kelime listesine çevirir (küçük harf)."""
+    """Convert a non-negative integer to a list of lowercase Turkish words."""
     if number == 0:
         return ["sıfır"]
     words = []
@@ -45,7 +45,7 @@ def integer_to_words(number):
         if group:
             group_words = _three_digits(group)
             if scale == 1 and group == 1:
-                group_words = []  # "bir bin" değil "bin"
+                group_words = []  # "bin", not "bir bin"
             if SCALES[scale]:
                 group_words.append(SCALES[scale])
             words = group_words + words
@@ -54,11 +54,11 @@ def integer_to_words(number):
 
 
 def amount_to_words(amount, currency_code="TRY", unit_label=None, subunit_label=None, decimals=2):
-    """Tutarı "Bin İki Yüz Otuz Dört Türk Lirası Elli Altı Kuruş" biçiminde döndürür."""
+    """Return the amount as "Bin İki Yüz Otuz Dört Türk Lirası Elli Altı Kuruş"."""
     amount = round(abs(amount), decimals)
     whole = int(amount)
     fraction = round((amount - whole) * 10**decimals) if decimals else 0
-    if fraction >= 10**decimals:  # yuvarlama taşması
+    if fraction >= 10**decimals:  # rounding overflow
         whole, fraction = whole + 1, 0
     unit, subunit = CURRENCY_WORDS.get(currency_code, (unit_label or currency_code, subunit_label or ""))
     text = " ".join(_tr_capitalize(word) for word in integer_to_words(whole)) + " " + unit

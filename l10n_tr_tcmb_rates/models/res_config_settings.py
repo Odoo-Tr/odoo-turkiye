@@ -17,9 +17,9 @@ class ResConfigSettings(models.TransientModel):
             "tag": "display_notification",
             "params": {
                 "type": "success",
-                "title": self.env._("TCMB kurları güncellendi"),
+                "title": self.env._("TCMB rates updated"),
                 "message": self.env._(
-                    "%(date)s tarihli bültenden %(count)s kur kaydedildi.",
+                    "%(count)s rates saved from the bulletin of %(date)s.",
                     date=bulletin_date.strftime("%d.%m.%Y"),
                     count=updated,
                 ),

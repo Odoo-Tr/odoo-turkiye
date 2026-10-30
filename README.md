@@ -7,6 +7,7 @@ Türkiye'deki şirketlerin ihtiyaçları için açık kaynak Odoo modülleri. [O
 | [`l10n_tr_tcmb_rates`](l10n_tr_tcmb_rates) | Döviz kurlarını her gün TCMB gösterge kurları bülteninden otomatik günceller |
 | [`l10n_tr_amount_in_words`](l10n_tr_amount_in_words) | Fatura çıktısına "Yalnız: ... Türk Lirası ... Kuruş" satırını ekler |
 | [`l10n_tr_address`](l10n_tr_address) | 81 ilin 973 ilçesi; il seçilince yalnız o ilin ilçeleri listelenir, adresler "İlçe/İl" biçiminde yazılır |
+| [`l10n_tr_stopaj`](l10n_tr_stopaj) | Serbest meslek ve kira ödemelerinde %20 gelir vergisi stopajı; muhtasar için aylık stopaj listesi |
 
 Sırada neler var: [yol haritası](ROADMAP.md) · [odoo-tr.com/p/3-yol-haritasi](https://odoo-tr.com/p/3-yol-haritasi)
 

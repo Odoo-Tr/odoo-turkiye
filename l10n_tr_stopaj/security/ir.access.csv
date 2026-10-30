@@ -1,0 +1,4 @@
+id,name,model_id,group_id/id,operation,domain
+access_l10n_tr_stopaj_report_readonly,l10n_tr.stopaj.report readonly,l10n_tr.stopaj.report,account.group_account_readonly,r,
+access_l10n_tr_stopaj_report_invoice,l10n_tr.stopaj.report billing,l10n_tr.stopaj.report,account.group_account_invoice,r,
+l10n_tr_stopaj_report_company_rule,Income tax withholding list: multi-company,l10n_tr.stopaj.report,,crud,"[('company_id', 'in', company_ids)]"

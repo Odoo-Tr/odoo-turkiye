@@ -1,7 +1,7 @@
 {
     "name": "TCMB Exchange Rates",
     "summary": "Update currency rates daily from the Central Bank of the Republic of Türkiye (TCMB) bulletin",
-    "version": "19.0.1.1.0",
+    "version": "18.0.1.1.0",
     "category": "Accounting/Localizations",
     "author": "Odoo Türkiye",
     "website": "https://odoo-tr.com",

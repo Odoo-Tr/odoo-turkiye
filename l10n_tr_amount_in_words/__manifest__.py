@@ -1,7 +1,7 @@
 {
     "name": "Amount in Words (TR)",
     "summary": "Print the Turkish \"Yalnız: ...\" amount in words line on invoices",
-    "version": "19.0.1.1.0",
+    "version": "18.0.1.1.0",
     "category": "Accounting/Localizations",
     "author": "Odoo Türkiye",
     "website": "https://odoo-tr.com",

@@ -7,6 +7,8 @@ Türkiye'deki şirketlerin ihtiyaçları için açık kaynak Odoo modülleri. [O
 | [`l10n_tr_tcmb_rates`](l10n_tr_tcmb_rates) | Döviz kurlarını her gün TCMB gösterge kurları bülteninden otomatik günceller |
 | [`l10n_tr_amount_in_words`](l10n_tr_amount_in_words) | Fatura çıktısına "Yalnız: ... Türk Lirası ... Kuruş" satırını ekler |
 
+Sırada neler var: [yol haritası](ROADMAP.md) · [odoo-tr.com/p/3-yol-haritasi](https://odoo-tr.com/p/3-yol-haritasi)
+
 ## Sürümler
 
 Her Odoo sürümü ayrı bir daldadır:

@@ -12,6 +12,7 @@ Odoo 18, 19 ve 20'de çalışır, Community sürümünde kurulabilir.
 - **[Faturada Yazıyla Tutar](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_amount_in_words)** (`l10n_tr_amount_in_words`): Fatura çıktısına "Yalnız: ... Türk Lirası ... Kuruş" satırını ekler.
 - **[İl ve İlçe Adresleri](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_address)** (`l10n_tr_address`): 81 ilin 973 ilçesi; il seçilince yalnız o ilin ilçeleri listelenir, adresler "İlçe/İl" biçiminde yazılır.
 - **[Gelir Vergisi Stopajı](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_stopaj)** (`l10n_tr_stopaj`): Serbest meslek ve kira ödemelerinde %20 stopaj, doğru hesaplarla; muhtasar için aylık stopaj listesi.
+- **[KKTC Muhasebe](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_kktc)** (`l10n_kktc`): Kuzey Kıbrıs Türk Cumhuriyeti: ülke, altı ilçe, KKTC Tek Düzen Hesap Planı ve %0/%5/%10/%16/%20 KDV.
 
 ## Sırada
 
@@ -31,6 +32,7 @@ Kapsamı büyük; tasarım aşamasında.
 
 İhtiyaç ve firma API'lerine erişim netleşince sıraya alınacak.
 
+- **KKTC e-Fatura**: Gelir ve Vergi Dairesi'nin e-Fatura web servisi. Test için KKTC'de kayıtlı bir firmanın test hesabı ve e-imzası gerekiyor.
 - **Banka ekstresi içe aktarma**: Türk bankalarının Excel ve CSV ekstreleri.
 - **Fatura ve irsaliye çıktısı**: Türkiye'de alışılmış belge düzeni.
 - **Ödeme: PayTR, Param**: iyzico Odoo 19'da zaten var.

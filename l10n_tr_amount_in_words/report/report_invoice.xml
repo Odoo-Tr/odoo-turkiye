@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document_amount_in_words" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='total']" position="inside">
+            <p t-if="o.tr_amount_total_words" name="tr_amount_in_words" class="mt-2 mb-0 small text-end">
+                <strong>Yalnız:</strong> <span t-field="o.tr_amount_total_words"/>
+            </p>
+        </xpath>
+    </template>
+</odoo>

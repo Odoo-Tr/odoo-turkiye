@@ -1,15 +1,17 @@
 {
-    "name": "Türkiye - Faturada Yazıyla Tutar",
-    "summary": "Fatura çıktısına \"Yalnız: ... Türk Lirası ... Kuruş\" satırını ekler",
-    "version": "19.0.1.0.0",
+    "name": "Amount in Words (TR)",
+    "summary": "Print the Turkish \"Yalnız: ...\" amount in words line on invoices",
+    "version": "19.0.1.1.0",
     "category": "Accounting/Localizations",
-    "author": "Odoo Türkiye (odoo-tr.com)",
-    "website": "https://github.com/Odoo-Tr/odoo-turkiye",
+    "author": "Odoo Türkiye",
+    "website": "https://odoo-tr.com",
+    "support": "destek@odoo-tr.com",
     "license": "LGPL-3",
     "depends": ["account"],
     "data": [
         "views/res_config_settings_views.xml",
         "report/report_invoice.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
 }

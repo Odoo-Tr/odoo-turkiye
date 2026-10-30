@@ -1,13 +1,65 @@
-<section style="max-width:760px;margin:0 auto;padding:24px 16px;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#202020;line-height:1.6">
-  <h2 style="margin:0 0 6px;font-size:28px;line-height:1.15;color:#202020">TCMB Döviz Kurları</h2>
-  <p style="margin:0 0 20px;font-size:16px;color:#6F6470">Döviz kurlarını her gün TCMB gösterge kurları bülteninden otomatik günceller. Odoo Community'de çalışır.</p>
-  <ul style="margin:0 0 20px;padding-left:20px">
-    <li><b>Kur türü:</b> döviz alış, döviz satış, efektif alış ya da efektif satış.</li>
-    <li><b>Ertesi gün kuralı:</b> D gününün bülteni D+1 tarihli kur olarak kaydedilir (açılıp kapatılabilir).</li>
-    <li><b>Birim farkları:</b> JPY gibi 100 birim üzerinden yayınlanan kurlar 1 birime çevrilir.</li>
-    <li><b>TL dışı şirketler:</b> şirket para birimi TL değilse kurlar TCMB üzerinden çapraz hesaplanır.</li>
-    <li><b>Otomatik ve elle:</b> zamanlanmış görev 3 saatte bir çalışır; ayarlardan elle de güncellenebilir.</li>
-  </ul>
-  <p style="margin:0 0 6px"><b>Kullanım:</b> Faturalama → Yapılandırma → Ayarlar → Currencies → <i>TCMB döviz kurları</i>.</p>
-  <p style="margin:0;color:#6F6470">Odoo Türkiye · <a href="https://odoo-tr.com" style="color:#883080">odoo-tr.com</a> · <a href="https://github.com/Odoo-Tr/odoo-turkiye" style="color:#883080">GitHub</a></p>
+<section class="container" style="max-width: 980px; font-size: 15px; line-height: 1.6; color: #202020;">
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2 style="font-weight: 700; margin-bottom: 6px;">TCMB Exchange Rates</h2>
+            <p class="lead" style="color: #6F6470;">
+                Keep your currency rates up to date with the official indicative rates of the Central Bank of the
+                Republic of Türkiye (TCMB). Works on Odoo Community.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <h4 style="font-weight: 700;">Features</h4>
+            <ul>
+                <li><b>Daily update</b> from the TCMB indicative rates bulletin, plus an <i>Update rates now</i> button.</li>
+                <li><b>Rate type:</b> forex buying, forex selling, banknote buying or banknote selling. If a currency has no value for the selected type, forex buying is used.</li>
+                <li><b>Next-day rule (optional):</b> TCMB publishes rates at 15:30 on business days for use on the following day. When enabled, the bulletin of day D is stored as the rate of D+1; weekends and public holidays keep the last published rate.</li>
+                <li><b>Units:</b> currencies quoted per 100 units (e.g. JPY) are converted to a single unit.</li>
+                <li><b>Any company currency:</b> if the company currency is not TRY, cross rates are computed through TCMB.</li>
+                <li><b>Multi-company:</b> settings and rates per company.</li>
+                <li>Only <b>active</b> currencies are updated.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4 style="font-weight: 700;">Configuration</h4>
+            <ol>
+                <li>Install the module.</li>
+                <li>Go to <i>Invoicing / Accounting &gt; Configuration &gt; Settings &gt; Currencies</i>.</li>
+                <li>Enable <i>TCMB exchange rates</i>, choose the rate type and click <i>Update rates now</i>.</li>
+            </ol>
+            <h4 style="font-weight: 700;" class="mt-3">External service</h4>
+            <p>
+                The module downloads the public daily bulletin (<code>today.xml</code>) from the website of the
+                Central Bank of the Republic of Türkiye. No company or personal data is sent; the request only
+                retrieves the bulletin. The scheduled action runs every 3 hours.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-5">
+            <h4 style="font-weight: 700;">Settings</h4>
+            <img src="screenshot_settings.png" class="img-fluid" style="border: 1px solid #E6DCE3; border-radius: 10px;" alt="TCMB exchange rates settings"/>
+        </div>
+        <div class="col-md-7">
+            <h4 style="font-weight: 700;">Rates saved from TCMB</h4>
+            <img src="screenshot_rates.png" class="img-fluid" style="border: 1px solid #E6DCE3; border-radius: 10px;" alt="USD rates fetched from TCMB"/>
+            <p class="mt-2" style="color: #6F6470; font-size: 13px;">
+                USD rates from the TCMB bulletins of 22–30 October 2026, saved with the next-day rule.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-4 mb-4">
+        <div class="col-12">
+            <h4 style="font-weight: 700;">Compatibility and support</h4>
+            <p>
+                Odoo 19.0 and 20.0 (tested on Community). Depends only on <code>account</code>.
+                Licensed under LGPL-3. Questions and bug reports:
+                <a href="mailto:destek@odoo-tr.com">destek@odoo-tr.com</a>
+            </p>
+        </div>
+    </div>
 </section>

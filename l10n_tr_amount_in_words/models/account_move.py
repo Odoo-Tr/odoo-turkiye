@@ -7,7 +7,7 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     tr_amount_total_words = fields.Char(
-        string="Yazıyla tutar",
+        string="Amount in words (Turkish)",
         compute="_compute_tr_amount_total_words",
     )
 

@@ -6,8 +6,8 @@
         <field name="inherit_id" ref="account.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//block[@name='main_currency_setting_container']" position="inside">
-                <setting id="tr_amount_in_words" string="Faturada yazıyla tutar"
-                         help="Fatura çıktısında toplamın altına &quot;Yalnız: ... Türk Lirası ... Kuruş&quot; satırını ekler.">
+                <setting id="tr_amount_in_words" string="Amount in words (Turkish)"
+                         help="Adds the line &quot;Yalnız: ... Türk Lirası ... Kuruş&quot; under the total on the invoice report.">
                     <field name="tr_show_amount_in_words"/>
                 </setting>
             </xpath>

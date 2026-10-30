@@ -1,6 +1,6 @@
 # Türkiye - TCMB Döviz Kurları
 
-Odoo'daki döviz kurlarını her gün **TCMB gösterge kurları** bülteninden (`today.xml`) otomatik günceller. Odoo'nun otomatik kur güncelleme özelliği yalnız Enterprise'da var; bu modül aynı işi **Community** sürümünde de yapar.
+Odoo'daki döviz kurlarını her gün **TCMB gösterge kurları** bülteninden (`today.xml`) otomatik günceller. **Community** sürümünde çalışır.
 
 ## Özellikler
 

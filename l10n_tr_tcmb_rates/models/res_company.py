@@ -11,12 +11,12 @@ _logger = logging.getLogger(__name__)
 
 TCMB_TODAY_URL = "https://www.tcmb.gov.tr/kurlar/today.xml"
 
-# TCMB bülteninde her para birimi için yayınlanan kur türleri (XML etiketi, etiket)
+# Rate types published in the TCMB bulletin for each currency (XML tag, label)
 TCMB_RATE_TYPES = [
-    ("ForexBuying", "Döviz alış"),
-    ("ForexSelling", "Döviz satış"),
-    ("BanknoteBuying", "Efektif alış"),
-    ("BanknoteSelling", "Efektif satış"),
+    ("ForexBuying", "Forex buying"),
+    ("ForexSelling", "Forex selling"),
+    ("BanknoteBuying", "Banknote buying"),
+    ("BanknoteSelling", "Banknote selling"),
 ]
 
 
@@ -24,23 +24,23 @@ class ResCompany(models.Model):
     _inherit = "res.company"
 
     tcmb_auto_update = fields.Boolean(
-        string="TCMB kurlarını otomatik güncelle",
-        help="Açıksa döviz kurları her gün TCMB'nin gösterge kurları bülteninden alınır.",
+        string="Update TCMB rates automatically",
+        help="If enabled, currency rates are fetched daily from the indicative rates bulletin of the Central Bank of the Republic of Türkiye (TCMB).",
     )
     tcmb_rate_type = fields.Selection(
         TCMB_RATE_TYPES,
-        string="TCMB kur türü",
+        string="TCMB rate type",
         default="ForexBuying",
         required=True,
     )
     tcmb_next_day = fields.Boolean(
-        string="Kuru ertesi günden geçerli yap",
+        string="Apply rates from the next day",
         default=True,
-        help="TCMB kurları her iş günü 15.30'da açıklanır ve uygulamada bir sonraki gün "
-        "için kullanılır. Açıksa D gününün bülteni D+1 tarihli kur olarak kaydedilir; "
-        "hafta sonu ve tatillerde son açıklanan kur geçerli kalır.",
+        help="TCMB publishes its rates at 15:30 on business days and they are used for the "
+        "following day. If enabled, the bulletin of day D is saved as the rate of D+1; "
+        "on weekends and holidays the last published rate stays in effect.",
     )
-    tcmb_last_update = fields.Datetime(string="Son TCMB güncellemesi", readonly=True)
+    tcmb_last_update = fields.Datetime(string="Last TCMB update", readonly=True)
 
     @api.model
     def _tcmb_fetch(self):
@@ -54,9 +54,9 @@ class ResCompany(models.Model):
 
     @api.model
     def _tcmb_parse(self, content):
-        """TCMB today.xml içeriğini çözümler.
+        """Parse the TCMB today.xml content.
 
-        Dönüş: (bülten tarihi, {para birimi kodu: {kur türü: 1 birim için TL}})
+        Returns: (bulletin date, {currency code: {rate type: TRY for 1 unit}})
         """
         root = ElementTree.fromstring(content)
         bulletin_date = datetime.strptime(root.attrib["Tarih"], "%d.%m.%Y").date()
@@ -74,7 +74,7 @@ class ResCompany(models.Model):
         return bulletin_date, rates
 
     def _tcmb_try_per_unit(self, rates, code):
-        """1 birim `code` için TL karşılığı; seçili kur türü yoksa döviz alışa düşer."""
+        """TRY value of 1 unit of `code`; falls back to forex buying if the selected type is missing."""
         self.ensure_one()
         if code == "TRY":
             return 1.0
@@ -82,7 +82,7 @@ class ResCompany(models.Model):
         return values.get(self.tcmb_rate_type) or values.get("ForexBuying")
 
     def _tcmb_apply(self, bulletin_date, rates):
-        """Bülteni şirketlerin kur tablolarına yazar. Güncellenen kur sayısını döner."""
+        """Write the bulletin to the companies' rate tables. Returns the number of rates written."""
         Rate = self.env["res.currency.rate"].sudo()
         updated = 0
         for company in self:
@@ -90,7 +90,7 @@ class ResCompany(models.Model):
             if not company_value:
                 raise UserError(
                     self.env._(
-                        "TCMB, %(company)s şirketinin para birimi (%(currency)s) için kur yayınlamıyor.",
+                        "TCMB does not publish a rate for the currency of %(company)s (%(currency)s).",
                         company=company.name,
                         currency=company.currency_id.name,
                     )
@@ -131,7 +131,7 @@ class ResCompany(models.Model):
         try:
             content = self._tcmb_fetch()
         except requests.RequestException as error:
-            raise UserError(self.env._("TCMB kurlarına ulaşılamadı: %s", error)) from error
+            raise UserError(self.env._("Could not reach the TCMB rates service: %s", error)) from error
         bulletin_date, rates = self._tcmb_parse(content)
         return bulletin_date, self._tcmb_apply(bulletin_date, rates)
 
@@ -143,11 +143,11 @@ class ResCompany(models.Model):
         try:
             content = self._tcmb_fetch()
         except requests.RequestException as error:
-            _logger.warning("TCMB kurlarına ulaşılamadı: %s", error)
+            _logger.warning("Could not reach the TCMB rates service: %s", error)
             return
         bulletin_date, rates = self._tcmb_parse(content)
         for company in companies:
             try:
                 company._tcmb_apply(bulletin_date, rates)
             except UserError as error:
-                _logger.warning("TCMB kurları %s için güncellenemedi: %s", company.name, error)
+                _logger.warning("TCMB rates could not be updated for %s: %s", company.name, error)

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_move_form_kur_farki" model="ir.ui.view">
+        <field name="name">account.move.form.l10n_tr_kur_farki</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_reverse']" position="before">
+                <field name="l10n_tr_kur_farki_pending" invisible="1"/>
+                <button name="action_l10n_tr_create_kur_farki" type="object"
+                        string="Exchange Difference Invoice"
+                        invisible="not l10n_tr_kur_farki_pending"/>
+            </xpath>
+            <xpath expr="//header" position="after">
+                <div class="alert alert-info" role="alert" invisible="l10n_tr_kur_farki_pending &lt;= 0">
+                    The payments of this invoice produced an exchange difference of
+                    <field name="l10n_tr_kur_farki_pending_abs" class="fw-bold" widget="monetary"
+                           options="{'currency_field': 'company_currency_id'}"/>
+                    in your favour that is not invoiced yet. You issue the exchange difference invoice, with VAT included in the amount.
+                </div>
+                <div class="alert alert-info" role="alert" invisible="l10n_tr_kur_farki_pending &gt;= 0">
+                    The payments of this invoice produced an exchange difference of
+                    <field name="l10n_tr_kur_farki_pending_abs" class="fw-bold" widget="monetary"
+                           options="{'currency_field': 'company_currency_id'}"/>
+                    in favour of the other party. They issue the exchange difference invoice; use the button to record it.
+                </div>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_l10n_tr_view_kur_farki" type="object" class="oe_stat_button"
+                        icon="fa-exchange" invisible="not l10n_tr_kur_farki_count">
+                    <field name="l10n_tr_kur_farki_count" widget="statinfo" string="Exchange Diff."/>
+                </button>
+                <button name="action_l10n_tr_view_kur_farki_origin" type="object" class="oe_stat_button"
+                        icon="fa-file-text-o" invisible="not l10n_tr_kur_farki_origin_id">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Exchange Difference Of</span>
+                        <field name="l10n_tr_kur_farki_origin_id" class="o_stat_value" readonly="1"/>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

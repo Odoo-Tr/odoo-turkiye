@@ -1,5 +1,6 @@
 from datetime import date
 
+from odoo import fields
 from odoo.exceptions import UserError
 from odoo.tests import TransactionCase, tagged
 
@@ -48,19 +49,40 @@ class TestTcmbRates(TransactionCase):
         self.assertNotIn("BanknoteBuying", rates["EUR"])
 
     def test_apply_next_day_try_company(self):
+        # Odoo 20 uses a rate from the day after its date, so the bulletin keeps its own date
         bulletin_date, rates = self.company._tcmb_parse(SAMPLE)
         self.company._tcmb_apply(bulletin_date, rates)
-        day = date(2026, 10, 31)
+        day = date(2026, 10, 30)
         self.assertAlmostEqual(self._rate(self.usd, self.company, day).rate, 1 / 40.0)
         self.assertAlmostEqual(self._rate(self.jpy, self.company, day).rate, 1 / 0.25)
-        self.assertFalse(self._rate(self.usd, self.company, date(2026, 10, 30)))
+        self.assertFalse(self._rate(self.usd, self.company, date(2026, 10, 31)))
         self.assertTrue(self.company.tcmb_last_update)
+
+    def _usd_in_try_on(self, day):
+        """TRY value of 1 USD that Odoo uses on `day`."""
+        getattr(self.env.cr, "cache", {}).pop("res.currency.rate.values", None)
+        self.env.invalidate_all()
+        return self.usd._convert(1, self.try_currency, self.company, fields.Date.to_date(day), round=False)
+
+    def test_effective_dates(self):
+        """Check the day each bulletin is used on, not the stored date: Odoo 20 applies a rate from
+        the day after its date, earlier versions from its date."""
+        self.env["res.currency.rate"].create(
+            {"name": "2026-10-01", "currency_id": self.usd.id, "company_id": self.company.id, "rate": 1 / 35}
+        )
+        self.company._tcmb_apply(*self.company._tcmb_parse(SAMPLE))
+        self.assertAlmostEqual(self._usd_in_try_on("2026-10-30"), 35, places=4)
+        self.assertAlmostEqual(self._usd_in_try_on("2026-10-31"), 40, places=4)
+
+        self.company.tcmb_next_day = False
+        self.company._tcmb_apply(*self.company._tcmb_parse(SAMPLE))
+        self.assertAlmostEqual(self._usd_in_try_on("2026-10-30"), 40, places=4)
 
     def test_same_day_and_rate_type_fallback(self):
         self.company.write({"tcmb_next_day": False, "tcmb_rate_type": "BanknoteSelling"})
         bulletin_date, rates = self.company._tcmb_parse(SAMPLE)
         self.company._tcmb_apply(bulletin_date, rates)
-        day = date(2026, 10, 30)
+        day = date(2026, 10, 29)
         self.assertAlmostEqual(self._rate(self.usd, self.company, day).rate, 1 / 40.3)
         # EUR için efektif kur yok: döviz alışa düşer
         self.assertAlmostEqual(self._rate(self.eur, self.company, day).rate, 1 / 50.0)
@@ -69,13 +91,13 @@ class TestTcmbRates(TransactionCase):
         bulletin_date, rates = self.company._tcmb_parse(SAMPLE)
         self.company._tcmb_apply(bulletin_date, rates)
         self.company._tcmb_apply(bulletin_date, rates)
-        self.assertEqual(len(self._rate(self.usd, self.company, date(2026, 10, 31))), 1)
+        self.assertEqual(len(self._rate(self.usd, self.company, date(2026, 10, 30))), 1)
 
     def test_non_try_company(self):
         usd_company = self.env["res.company"].create({"name": "USD Co", "currency_id": self.usd.id})
         bulletin_date, rates = usd_company._tcmb_parse(SAMPLE)
         usd_company._tcmb_apply(bulletin_date, rates)
-        day = date(2026, 10, 31)
+        day = date(2026, 10, 30)
         # 1 USD = 40 TL ve 1 EUR = 50 TL ise 1 USD = 0,8 EUR
         self.assertAlmostEqual(self._rate(self.eur, usd_company, day).rate, 40.0 / 50.0)
         self.assertAlmostEqual(self._rate(self.try_currency, usd_company, day).rate, 40.0)

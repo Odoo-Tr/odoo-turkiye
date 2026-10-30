@@ -114,9 +114,9 @@ msgstr "TCMB döviz kurları"
 #: model:ir.model.fields,help:l10n_tr_tcmb_rates.field_res_config_settings__tcmb_next_day
 msgid ""
 "TCMB publishes its rates at 15:30 on business days and they are used for the"
-" following day. If enabled, the bulletin of day D is saved as the rate of "
-"D+1; on weekends and holidays the last published rate stays in effect."
-msgstr "TCMB kurları her iş günü 15.30'da açıklanır ve uygulamada bir sonraki gün için kullanılır. Açıksa D gününün bülteni D+1 tarihli kur olarak kaydedilir; hafta sonu ve tatillerde son açıklanan kur geçerli kalır."
+" following day. If enabled, the bulletin of day D is used from D+1; otherwise "
+"from D. On weekends and holidays the last published rate stays in effect."
+msgstr "TCMB kurları her iş günü 15.30'da açıklanır ve uygulamada bir sonraki gün için kullanılır. Açıksa D gününün bülteni D+1'den, kapalıysa D'den itibaren kullanılır. Hafta sonu ve tatillerde son açıklanan kur geçerli kalır."
 
 #. module: l10n_tr_tcmb_rates
 #: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_company__tcmb_rate_type

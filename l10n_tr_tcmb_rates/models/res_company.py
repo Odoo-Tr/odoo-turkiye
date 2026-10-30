@@ -37,8 +37,8 @@ class ResCompany(models.Model):
         string="Apply rates from the next day",
         default=True,
         help="TCMB publishes its rates at 15:30 on business days and they are used for the "
-        "following day. If enabled, the bulletin of day D is saved as the rate of D+1; "
-        "on weekends and holidays the last published rate stays in effect.",
+        "following day. If enabled, the bulletin of day D is used from D+1; otherwise from D. "
+        "On weekends and holidays the last published rate stays in effect.",
     )
     tcmb_last_update = fields.Datetime(string="Last TCMB update", readonly=True)
 
@@ -95,7 +95,9 @@ class ResCompany(models.Model):
                         currency=company.currency_id.name,
                     )
                 )
-            rate_date = bulletin_date + timedelta(days=1) if company.tcmb_next_day else bulletin_date
+            # Odoo 20 applies a rate from the day after its date: the bulletin keeps its own date to be
+            # used from the next day, or is dated the day before to be used on the bulletin day.
+            rate_date = bulletin_date if company.tcmb_next_day else bulletin_date - timedelta(days=1)
             currencies = self.env["res.currency"].search(
                 [("active", "=", True), ("id", "!=", company.currency_id.id)]
             )

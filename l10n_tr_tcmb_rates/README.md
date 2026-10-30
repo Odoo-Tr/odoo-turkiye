@@ -5,7 +5,7 @@ Odoo'daki döviz kurlarını her gün **TCMB gösterge kurları** bülteninden (
 ## Özellikler
 
 - **Kur türü seçimi:** Döviz alış, döviz satış, efektif alış ya da efektif satış. Seçilen tür bir para birimi için yayınlanmamışsa döviz alış kullanılır.
-- **Ertesi gün kuralı (varsayılan açık):** TCMB kurları her iş günü 15.30'da açıklanır ve uygulamada bir sonraki gün için kullanılır. Bu ayar açıkken D gününün bülteni D+1 tarihli kur olarak kaydedilir. Hafta sonu ve tatillerde son açıklanan kur geçerli kalır.
+- **Ertesi gün kuralı (varsayılan açık):** TCMB kurları her iş günü 15.30'da açıklanır ve uygulamada bir sonraki gün için kullanılır. Bu ayar açıkken D gününün bülteni D+1'den itibaren kullanılır. Odoo 20 bir kuru tarihinden sonraki günden itibaren uyguladığı için bülten kendi tarihiyle (kapalıyken bir gün öncesinin tarihiyle) kaydedilir. Hafta sonu ve tatillerde son açıklanan kur geçerli kalır.
 - **Birim farkları:** JPY gibi 100 birim üzerinden yayınlanan kurlar 1 birime çevrilir.
 - **TL dışı şirket para birimi:** Şirketin para birimi TL değilse (ör. USD), kurlar TCMB üzerinden çapraz hesaplanır.
 - **Çoklu şirket:** Her şirket için ayrı ayar ve ayrı kur kaydı.

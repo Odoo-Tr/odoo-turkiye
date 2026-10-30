@@ -1,5 +1,6 @@
 from datetime import date
 
+from odoo import fields
 from odoo.exceptions import UserError
 from odoo.tests import TransactionCase, tagged
 
@@ -55,6 +56,26 @@ class TestTcmbRates(TransactionCase):
         self.assertAlmostEqual(self._rate(self.jpy, self.company, day).rate, 1 / 0.25)
         self.assertFalse(self._rate(self.usd, self.company, date(2026, 10, 30)))
         self.assertTrue(self.company.tcmb_last_update)
+
+    def _usd_in_try_on(self, day):
+        """TRY value of 1 USD that Odoo uses on `day`."""
+        getattr(self.env.cr, "cache", {}).pop("res.currency.rate.values", None)
+        self.env.invalidate_all()
+        return self.usd._convert(1, self.try_currency, self.company, fields.Date.to_date(day), round=False)
+
+    def test_effective_dates(self):
+        """Check the day each bulletin is used on, not the stored date: Odoo 20 applies a rate from
+        the day after its date, earlier versions from its date."""
+        self.env["res.currency.rate"].create(
+            {"name": "2026-10-01", "currency_id": self.usd.id, "company_id": self.company.id, "rate": 1 / 35}
+        )
+        self.company._tcmb_apply(*self.company._tcmb_parse(SAMPLE))
+        self.assertAlmostEqual(self._usd_in_try_on("2026-10-30"), 35, places=4)
+        self.assertAlmostEqual(self._usd_in_try_on("2026-10-31"), 40, places=4)
+
+        self.company.tcmb_next_day = False
+        self.company._tcmb_apply(*self.company._tcmb_parse(SAMPLE))
+        self.assertAlmostEqual(self._usd_in_try_on("2026-10-30"), 40, places=4)
 
     def test_same_day_and_rate_type_fallback(self):
         self.company.write({"tcmb_next_day": False, "tcmb_rate_type": "BanknoteSelling"})

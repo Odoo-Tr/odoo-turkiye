@@ -13,13 +13,13 @@ Odoo 18, 19 ve 20'de çalışır, Community sürümünde kurulabilir.
 - **[İl ve İlçe Adresleri](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_address)** (`l10n_tr_address`): 81 ilin 973 ilçesi; il seçilince yalnız o ilin ilçeleri listelenir, adresler "İlçe/İl" biçiminde yazılır.
 - **[Gelir Vergisi Stopajı](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_stopaj)** (`l10n_tr_stopaj`): Serbest meslek ve kira ödemelerinde %20 stopaj, doğru hesaplarla; muhtasar için aylık stopaj listesi.
 - **[KKTC Muhasebe](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_kktc)** (`l10n_kktc`): Kuzey Kıbrıs Türk Cumhuriyeti: ülke, altı ilçe, KKTC Tek Düzen Hesap Planı ve %0/%5/%10/%16/%20 KDV.
+- **[Kur Farkı Faturası](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_kur_farki)** (`l10n_tr_kur_farki`): Dövizli faturanın tahsilat ya da ödemesinde oluşan kur farkı için KDV'si iç yüzdeyle hesaplanmış fatura, tek tıkla.
 
 ## Sırada
 
 Bu sırayla geliştirilecek.
 
-1. **Kur farkı faturası** · Orta: Tahsilatta oluşan kur farkı için faturanın oluşturulması.
-2. **Mizan, bilanço ve gelir tablosu** · Orta: Tek Düzen Hesap Planı'na göre finansal raporlar, Community için.
+1. **Mizan, bilanço ve gelir tablosu** · Orta: Tek Düzen Hesap Planı'na göre finansal raporlar, Community için.
 
 ## Planlanıyor
 

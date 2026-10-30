@@ -1,0 +1,177 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_kur_farki
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-30 22:18+0000\n"
+"PO-Revision-Date: 2026-10-30 22:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: Odoo Türkiye\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+msgid "%(invoice)s uses %(tax)s. Exchange difference invoices are only created for invoices with plain VAT rates; create this one manually."
+msgstr "%(invoice)s faturasında %(tax)s kullanılmış. Kur farkı faturası yalnız düz KDV oranlı faturalar için otomatik oluşturulur; bunu elle oluşturun."
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+msgid "%s has no amount to split the exchange difference on."
+msgstr "%s faturasında kur farkının dağıtılacağı tutar yok."
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+msgid "%s has no exchange difference left to invoice."
+msgstr "%s faturasında faturalanmamış kur farkı kalmadı."
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+msgid "%s is not a posted invoice in a foreign currency."
+msgstr "%s onaylanmış dövizli bir fatura değil."
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+msgid "%s must use a single receivable or payable account."
+msgstr "%s tek bir alacak ya da borç hesabı kullanmalı."
+
+#. module: l10n_tr_kur_farki
+#: model_terms:ir.ui.view,arch_db:l10n_tr_kur_farki.view_move_form_kur_farki
+msgid "<span class=\"o_stat_text\">Exchange Difference Of</span>"
+msgstr "<span class=\"o_stat_text\">Asıl Fatura</span>"
+
+#. module: l10n_tr_kur_farki
+#: model:ir.actions.server,name:l10n_tr_kur_farki.action_create_kur_farki
+msgid "Create exchange difference invoices"
+msgstr "Kur farkı faturası oluştur"
+
+#. module: l10n_tr_kur_farki
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_move__display_name
+msgid "Display Name"
+msgstr "Görünen Ad"
+
+#. module: l10n_tr_kur_farki
+#: model_terms:ir.ui.view,arch_db:l10n_tr_kur_farki.view_move_form_kur_farki
+msgid "Exchange Diff."
+msgstr "Kur Farkı"
+
+#. module: l10n_tr_kur_farki
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_bank_statement_line__l10n_tr_kur_farki_pending_abs
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_move__l10n_tr_kur_farki_pending_abs
+msgid "Exchange Difference Amount"
+msgstr "Kur Farkı Tutarı"
+
+#. module: l10n_tr_kur_farki
+#: model_terms:ir.ui.view,arch_db:l10n_tr_kur_farki.view_move_form_kur_farki
+msgid "Exchange Difference Invoice"
+msgstr "Kur Farkı Faturası"
+
+#. module: l10n_tr_kur_farki
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_bank_statement_line__l10n_tr_kur_farki_count
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_move__l10n_tr_kur_farki_count
+msgid "Exchange Difference Invoice Count"
+msgstr "Kur Farkı Faturası Sayısı"
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_bank_statement_line__l10n_tr_kur_farki_ids
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_move__l10n_tr_kur_farki_ids
+msgid "Exchange Difference Invoices"
+msgstr "Kur Farkı Faturaları"
+
+#. module: l10n_tr_kur_farki
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_bank_statement_line__l10n_tr_kur_farki_origin_id
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_move__l10n_tr_kur_farki_origin_id
+msgid "Exchange Difference Of"
+msgstr "Asıl Fatura"
+
+#. module: l10n_tr_kur_farki
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_bank_statement_line__l10n_tr_kur_farki_offset_move_id
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_move__l10n_tr_kur_farki_offset_move_id
+msgid "Exchange Difference Offset"
+msgstr "Kur Farkı Mahsup Kaydı"
+
+#. module: l10n_tr_kur_farki
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_bank_statement_line__l10n_tr_kur_farki_pending
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_move__l10n_tr_kur_farki_pending
+msgid "Exchange Difference to Invoice"
+msgstr "Faturalanacak Kur Farkı"
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+msgid "Exchange difference invoice %s"
+msgstr "Kur farkı faturası %s"
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+msgid "Exchange difference invoice %s created."
+msgstr "Kur farkı faturası %s oluşturuldu."
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+msgid "Exchange difference: %(invoice)s (%(rate)s%% VAT)"
+msgstr "Kur farkı: %(invoice)s (%%%(rate)s KDV)"
+
+#. module: l10n_tr_kur_farki
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_move__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_tr_kur_farki
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_bank_statement_line__l10n_tr_kur_farki_exchange_move_ids
+#: model:ir.model.fields,field_description:l10n_tr_kur_farki.field_account_move__l10n_tr_kur_farki_exchange_move_ids
+msgid "Invoiced Exchange Difference Entries"
+msgstr "Faturalanan Kur Farkı Kayıtları"
+
+#. module: l10n_tr_kur_farki
+#: model:ir.model,name:l10n_tr_kur_farki.model_account_move
+msgid "Journal Entry"
+msgstr "Yevmiye Kaydı"
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+msgid "No %(type)s tax at %(rate)s%% was found for the exchange difference invoice of %(invoice)s."
+msgstr "%(invoice)s faturasının kur farkı faturası için %%%(rate)s oranlı bir %(type)s vergisi bulunamadı."
+
+#. module: l10n_tr_kur_farki
+#. odoo-python
+#: code:addons/l10n_tr_kur_farki/models/account_move.py:0
+msgid "None of the selected invoices has an exchange difference left to invoice."
+msgstr "Seçilen faturaların hiçbirinde faturalanmamış kur farkı yok."
+
+#. module: l10n_tr_kur_farki
+#: model:ir.model.fields,help:l10n_tr_kur_farki.field_account_bank_statement_line__l10n_tr_kur_farki_pending
+#: model:ir.model.fields,help:l10n_tr_kur_farki.field_account_move__l10n_tr_kur_farki_pending
+msgid "Realized exchange difference of the payments of this invoice that no exchange difference invoice covers yet. Positive: in our favour."
+msgstr "Bu faturanın tahsilat ya da ödemelerinde oluşan ve henüz kur farkı faturası kesilmemiş kur farkı. Artı: lehimize."
+
+#. module: l10n_tr_kur_farki
+#: model_terms:ir.ui.view,arch_db:l10n_tr_kur_farki.view_move_form_kur_farki
+msgid "The payments of this invoice produced an exchange difference of"
+msgstr "Bu faturanın tahsilat ya da ödemesinde"
+
+#. module: l10n_tr_kur_farki
+#: model_terms:ir.ui.view,arch_db:l10n_tr_kur_farki.view_move_form_kur_farki
+msgid "in favour of the other party. They issue the exchange difference invoice; use the button to record it."
+msgstr "tutarında karşı tarafın lehine kur farkı oluştu. Kur farkı faturasını karşı taraf keser; gelen faturayı kaydetmek için Kur Farkı Faturası düğmesini kullanın."
+
+#. module: l10n_tr_kur_farki
+#: model_terms:ir.ui.view,arch_db:l10n_tr_kur_farki.view_move_form_kur_farki
+msgid "in your favour that is not invoiced yet. You issue the exchange difference invoice, with VAT included in the amount."
+msgstr "tutarında lehinize kur farkı oluştu ve henüz faturalanmadı. Kur farkı faturasını siz kesersiniz; KDV bu tutarın içindedir."

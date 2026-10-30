@@ -11,14 +11,14 @@ Odoo 18, 19 ve 20'de çalışır, Community sürümünde kurulabilir.
 - **[TCMB Döviz Kurları](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_tcmb_rates)** (`l10n_tr_tcmb_rates`): Döviz kurlarını her gün TCMB gösterge kurları bülteninden otomatik günceller.
 - **[Faturada Yazıyla Tutar](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_amount_in_words)** (`l10n_tr_amount_in_words`): Fatura çıktısına "Yalnız: ... Türk Lirası ... Kuruş" satırını ekler.
 - **[İl ve İlçe Adresleri](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_address)** (`l10n_tr_address`): 81 ilin 973 ilçesi; il seçilince yalnız o ilin ilçeleri listelenir, adresler "İlçe/İl" biçiminde yazılır.
+- **[Gelir Vergisi Stopajı](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_stopaj)** (`l10n_tr_stopaj`): Serbest meslek ve kira ödemelerinde %20 stopaj, doğru hesaplarla; muhtasar için aylık stopaj listesi.
 
 ## Sırada
 
 Bu sırayla geliştirilecek.
 
-1. **Gelir vergisi stopajı** · Küçük: Serbest meslek ve kira stopajı vergileri, serbest meslek makbuzu çıktısı.
-2. **Kur farkı faturası** · Orta: Tahsilatta oluşan kur farkı için faturanın oluşturulması.
-3. **Mizan, bilanço ve gelir tablosu** · Orta: Tek Düzen Hesap Planı'na göre finansal raporlar, Community için.
+1. **Kur farkı faturası** · Orta: Tahsilatta oluşan kur farkı için faturanın oluşturulması.
+2. **Mizan, bilanço ve gelir tablosu** · Orta: Tek Düzen Hesap Planı'na göre finansal raporlar, Community için.
 
 ## Planlanıyor
 

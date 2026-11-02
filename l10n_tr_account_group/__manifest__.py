@@ -1,0 +1,15 @@
+{
+    "name": "Turkish Account Groups",
+    "summary": "Account groups of the Turkish uniform chart of accounts (Tek Düzen Hesap Planı) for Odoo 15",
+    "version": "15.0.1.0.0",
+    "category": "Accounting/Localizations",
+    "author": "Odoo Türkiye",
+    "website": "https://odoo-tr.com",
+    "support": "destek@odoo-tr.com",
+    "license": "LGPL-3",
+    "depends": ["l10n_tr"],
+    "data": ["data/account.group.template.csv"],
+    "images": ["static/description/banner.png"],
+    "post_init_hook": "post_init_hook",
+    "installable": True,
+}

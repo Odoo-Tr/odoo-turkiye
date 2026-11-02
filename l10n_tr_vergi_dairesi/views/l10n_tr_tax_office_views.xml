@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="l10n_tr_tax_office_view_list" model="ir.ui.view">
+        <field name="name">l10n_tr.tax.office.list</field>
+        <field name="model">l10n_tr.tax.office</field>
+        <field name="arch" type="xml">
+            <tree string="Tax Offices" editable="bottom">
+                <field name="name"/>
+                <field name="code" optional="show"/>
+                <field name="state_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="l10n_tr_tax_office_view_search" model="ir.ui.view">
+        <field name="name">l10n_tr.tax.office.search</field>
+        <field name="model">l10n_tr.tax.office</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="state_id"/>
+                <group>
+                    <filter name="group_state" string="Province" context="{'group_by': 'state_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_l10n_tr_tax_office" model="ir.actions.act_window">
+        <field name="name">Tax Offices</field>
+        <field name="res_model">l10n_tr.tax.office</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_l10n_tr_tax_office" action="action_l10n_tr_tax_office"
+              parent="contacts.menu_localisation" sequence="10"/>
+</odoo>

@@ -1,0 +1,21 @@
+{
+    "name": "Turkish Districts (İlçe)",
+    "summary": "All 973 districts of Türkiye, filtered by province, with Turkish address format",
+    "version": "16.0.1.0.0",
+    "category": "Sales/Sales",
+    "author": "Odoo Türkiye",
+    "website": "https://odoo-tr.com",
+    "support": "destek@odoo-tr.com",
+    "license": "LGPL-3",
+    "depends": ["base_address_extended", "contacts"],
+    "data": [
+        "data/res_country_data.xml",
+        "data/res.city.csv",
+        "data/ir_actions_server.xml",
+        "views/res_partner_views.xml",
+    ],
+    "images": ["static/description/banner.png"],
+    "post_init_hook": "post_init_hook",
+    "uninstall_hook": "uninstall_hook",
+    "installable": True,
+}

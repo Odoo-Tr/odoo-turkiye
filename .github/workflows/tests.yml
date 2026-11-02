@@ -1,0 +1,48 @@
+name: Tests
+
+on:
+  push:
+    branches: ["15.0", "16.0", "17.0", "18.0", "19.0", "20.0"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Odoo ${{ matrix.version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ["15.0", "16.0", "17.0", "18.0", "19.0", "20.0"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Each Odoo version lives on its own branch; a pull request is tested on its own branch only
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || matrix.version }}
+          repository: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name || github.repository }}
+
+      - name: Skip pull requests aimed at another version
+        id: scope
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ] && [ "${{ github.base_ref }}" != "${{ matrix.version }}" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install the modules and run their tests
+        if: steps.scope.outputs.skip != 'true'
+        run: |
+          V="${{ matrix.version }}"; V="${V%.0}"
+          MODS=$(ls -d l10n_* | paste -sd, -)
+          TAGS=$(echo "$MODS" | sed 's/\([^,]*\)/\/\1/g')
+          DEMO=""; [ "$V" = "19" ] && DEMO="--without-demo=all"
+          docker network create odoo
+          docker run -d --name db --network odoo -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres postgres:16
+          until docker exec db pg_isready -U odoo >/dev/null 2>&1; do sleep 2; done
+          # l10n_tr: the accounting tests of Odoo 15 and 16 use the Turkish chart of accounts
+          docker run --rm --network odoo -e HOST=db -e USER=odoo -e PASSWORD=odoo \
+            -v "$GITHUB_WORKSPACE":/mnt/extra-addons odoo:$V \
+            odoo -d test --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons \
+            -i "l10n_tr,$MODS" $DEMO --test-enable --test-tags="$TAGS" \
+            --stop-after-init --log-level=test 2>&1 | tee test.log
+          grep -E "tests\.(result|runner): " test.log
+          grep -qE "tests\.(result|runner): 0 failed, 0 error\(s\)" test.log

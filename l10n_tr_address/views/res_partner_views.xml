@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Once a province is chosen, only its districts are offered. The list is complete,
+         new districts are added from Contacts > Configuration > Localization > Cities. -->
+    <record id="view_partner_form_district_by_province" model="ir.ui.view">
+        <field name="name">res.partner.form.l10n_tr_address</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base_address_extended.address_street_extended_city_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='city_id'][not(ancestor::field[@name='child_ids'])]" position="attributes">
+                <attribute name="domain">state_id and [('country_id', '=', country_id), ('state_id', '=', state_id)] or [('country_id', '=', country_id)]</attribute>
+                <attribute name="options">{'no_create': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']//field[@name='city_id']" position="attributes">
+                <attribute name="domain">state_id and [('country_id', '=', country_id), ('state_id', '=', state_id)] or [('country_id', '=', country_id)]</attribute>
+                <attribute name="options">{'no_create': True}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,76 @@
+<section class="container" style="max-width: 980px; font-size: 15px; line-height: 1.6; color: #202020;">
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2 style="font-weight: 700; margin-bottom: 6px;">TR FX Difference Invoice</h2>
+            <p class="lead" style="color: #6F6470;">
+                In T&#252;rkiye, when a foreign currency invoice is paid at a different rate, the realized exchange
+                difference (kur fark&#305;) is subject to VAT and must be invoiced by the party it favours. Odoo books
+                the difference on the exchange gain or loss account but issues no invoice. This module creates
+                that invoice from the payment, with the VAT taken out of the difference.
+            </p>
+            <p style="padding: 12px 16px; border-left: 4px solid #883080; background: #F6F1F5; border-radius: 8px;">
+                $6,000 booked at 41.20, collected at 42.55: 8,100.00 TRY difference = <b>6,750.00 + 1,350.00 VAT (20%)</b>.
+            </p>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <h4 style="font-weight: 700;">Features</h4>
+            <ul>
+                <li>A banner on paid foreign currency invoices and bills shows the exchange difference that is not invoiced yet, and in whose favour it is.</li>
+                <li>One click creates the exchange difference invoice in TRY, dated on the payment.</li>
+                <li>In your favour: a customer invoice you issue. In the other party's favour: a draft bill to record the invoice they send you.</li>
+                <li>VAT is taken out of the difference (the difference includes VAT) at the rate of the original invoice; invoices with several rates are split proportionally.</li>
+                <li>When posted, the invoice is settled against the exchange gain or loss account, since the amount was already received or paid. Only the VAT moves out of that account.</li>
+                <li>Partial payments: each payment's difference is invoiced once; later payments can be invoiced separately.</li>
+                <li>Invoices and bills list: <i>Actions &gt; Create exchange difference invoices</i> for several invoices at once.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4 style="font-weight: 700;">How to use</h4>
+            <ol>
+                <li>Register the payment of a foreign currency invoice as usual.</li>
+                <li>Click <i>Exchange Difference Invoice</i> on the invoice.</li>
+                <li>Check the draft and confirm it. For a bill in the other party's favour, enter their invoice number first.</li>
+            </ol>
+            <p>Invoices with withholding (tevkifat) or non-percentage taxes are not handled automatically; the button explains why.</p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <h4 style="font-weight: 700;">Paid invoice with an exchange difference</h4>
+            <img src="screenshot_invoice.png" class="img-fluid" style="border: 1px solid #E6DCE3; border-radius: 10px;" alt="Paid USD invoice with the exchange difference banner"/>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <h4 style="font-weight: 700;">Exchange difference invoice</h4>
+            <img src="screenshot_kur_farki.png" class="img-fluid" style="border: 1px solid #E6DCE3; border-radius: 10px;" alt="Exchange difference invoice with VAT"/>
+        </div>
+    </div>
+    <div class="row mt-4 mb-4">
+        <div class="col-12">
+            <h4 style="font-weight: 700;">Compatibility and support</h4>
+            <p>
+                Odoo 16.0 (tested on Community with the Turkish chart of accounts). Depends only on <code>account</code>.
+                No external service is used. Licensed under LGPL-3. Questions and bug reports:
+                <a href="mailto:destek@odoo-tr.com">destek@odoo-tr.com</a>
+            </p>
+        </div>
+    </div>
+    <div class="row mt-2 mb-4" lang="tr">
+        <div class="col-12" style="border-top: 1px solid #E6DCE3; padding-top: 24px;">
+            <h3 style="font-weight: 700;">T&#252;rk&#231;e a&#231;&#305;klama</h3>
+            <p>D&#246;vizli bir fatura farkl&#305; kurdan tahsil edildi&#287;inde ya da &#246;dendi&#287;inde olu&#351;an kur fark&#305; KDV'ye tabidir ve lehine olu&#351;an taraf&#231;a faturalan&#305;r. Odoo kur fark&#305;n&#305; 646/656 hesab&#305;na yazar ama fatura kesmez. Bu mod&#252;l kur fark&#305; faturas&#305;n&#305; tek t&#305;kla olu&#351;turur.</p>
+            <ul>
+                <li>&#214;denmi&#351; d&#246;vizli faturada, hen&#252;z faturalanmam&#305;&#351; kur fark&#305; ve kimin lehine oldu&#287;u g&#246;sterilir.</li>
+                <li>Lehinizeyse sat&#305;&#351; faturas&#305;, kar&#351;&#305; taraf&#305;n lehineyse onlar&#305;n g&#246;nderece&#287;i faturay&#305; kaydetmek i&#231;in al&#305;&#351; faturas&#305; tasla&#287;&#305; olu&#351;ur; tarih tahsilat ya da &#246;deme tarihidir.</li>
+                <li>KDV, as&#305;l faturadaki orandan i&#231; y&#252;zdeyle hesaplan&#305;r; birden &#231;ok oranl&#305; faturalarda tutar oranlara g&#246;re b&#246;l&#252;n&#252;r.</li>
+                <li>Onaylanan kur fark&#305; faturas&#305;, tutar zaten tahsil edildi&#287;i ya da &#246;dendi&#287;i i&#231;in kur fark&#305; hesab&#305;yla kapat&#305;l&#305;r; hesaptan yaln&#305;z KDV &#231;&#305;kar.</li>
+                <li>K&#305;smi &#246;demelerde her &#246;demenin kur fark&#305; bir kez faturalan&#305;r.</li>
+                <li>Tevkifatl&#305; faturalar otomatik i&#351;lenmez.</li>
+            </ul>
+            <p>Sorular ve hata bildirimleri: <a href="mailto:destek@odoo-tr.com">destek@odoo-tr.com</a></p>
+        </div>
+    </div>
+</section>

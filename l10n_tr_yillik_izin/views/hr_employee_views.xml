@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_annual_leave" model="ir.ui.view">
+        <field name="name">hr.employee.form.l10n_tr_yillik_izin</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <field name="birthday" position="after">
+                <field name="l10n_tr_seniority_date"/>
+                <field name="l10n_tr_underground"/>
+                <field name="l10n_tr_service_years" attrs="{'invisible': [('l10n_tr_seniority_date', '=', False)]}"/>
+                <label for="l10n_tr_annual_leave_days" attrs="{'invisible': [('l10n_tr_seniority_date', '=', False)]}"/>
+                <div class="o_row" attrs="{'invisible': [('l10n_tr_seniority_date', '=', False)]}">
+                    <field name="l10n_tr_annual_leave_days" class="oe_inline"/>
+                    <span>days</span>
+                    <button name="action_l10n_tr_allocate_annual_leave" type="object" string="Allocate"
+                            class="btn-link" groups="hr_holidays.group_hr_holidays_user"/>
+                </div>
+            </field>
+        </field>
+    </record>
+</odoo>

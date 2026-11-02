@@ -10,6 +10,11 @@ Türkiye'deki şirketlerin ihtiyaçları için açık kaynak Odoo modülleri. [O
 | [`l10n_tr_stopaj`](l10n_tr_stopaj) | Serbest meslek ve kira ödemelerinde %20 gelir vergisi stopajı; muhtasar için aylık stopaj listesi |
 | [`l10n_kktc`](l10n_kktc) | KKTC: ülke, altı ilçe, KKTC Tek Düzen Hesap Planı ve %0/%5/%10/%16/%20 KDV |
 | [`l10n_tr_kur_farki`](l10n_tr_kur_farki) | Dövizli faturanın tahsilat ya da ödemesindeki kur farkı için KDV'li kur farkı faturası |
+| [`l10n_tr_kur_degerleme`](l10n_tr_kur_degerleme) | Dönem sonunda dövizli alacak, borç ve banka hesaplarının kur değerlemesi (VUK 280) |
+| [`l10n_tr_resmi_tatil`](l10n_tr_resmi_tatil) | Ulusal bayramlar, genel tatiller ve 2025–2030 dini bayramları; arife ve 28 Ekim yarım günleri |
+| [`l10n_tr_yillik_izin`](l10n_tr_yillik_izin) | İş Kanunu md. 53'e göre kıdemden yıllık izin hakkı; her hizmet yılında otomatik tahsis |
+| [`l10n_tr_banka`](l10n_tr_banka) | 67 banka, EFT ve BIC kodlarıyla; Türk IBAN'ı girilince banka kendiliğinden seçilir |
+| [`l10n_tr_vergi_dairesi`](l10n_tr_vergi_dairesi) | 1.046 vergi dairesi; kişi ve şirkette listeden seçilen Vergi Dairesi alanı |
 
 Sırada neler var: [yol haritası](ROADMAP.md) · [odoo-tr.com/p/3-yol-haritasi](https://odoo-tr.com/p/3-yol-haritasi)
 
@@ -19,9 +24,29 @@ Her Odoo sürümü ayrı bir daldadır:
 
 | Odoo | Dal |
 |---|---|
+| 15.0 | [`15.0`](https://github.com/Odoo-Tr/odoo-turkiye/tree/15.0) |
+| 16.0 | [`16.0`](https://github.com/Odoo-Tr/odoo-turkiye/tree/16.0) |
+| 17.0 | [`17.0`](https://github.com/Odoo-Tr/odoo-turkiye/tree/17.0) |
 | 18.0 | [`18.0`](https://github.com/Odoo-Tr/odoo-turkiye/tree/18.0) |
 | 19.0 | [`19.0`](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0) |
 | 20.0 | [`20.0`](https://github.com/Odoo-Tr/odoo-turkiye/tree/20.0) |
+
+### Hangi modül hangi sürümde
+
+| Modül | 15 | 16 | 17 | 18 | 19 | 20 |
+|---|---|---|---|---|---|---|
+| `l10n_tr_tcmb_rates` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `l10n_tr_amount_in_words` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `l10n_tr_address` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `l10n_tr_stopaj` | – | – | ✓ | ✓ | ✓ | ✓ |
+| `l10n_kktc` | – | – | ✓ | ✓ | ✓ | ✓ |
+| `l10n_tr_kur_farki` | – | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `l10n_tr_kur_degerleme` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `l10n_tr_resmi_tatil` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `l10n_tr_yillik_izin` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `l10n_tr_banka` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `l10n_tr_vergi_dairesi` | ✓ | ✓ | ✓ | ✓ | ✓ | – |
+| `l10n_tr_account_group` | ✓ | – | – | – | – | – |
 
 ## Kurulum
 

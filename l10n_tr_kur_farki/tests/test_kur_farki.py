@@ -134,7 +134,8 @@ class TestKurFarki(AccountTestInvoicingCommon):
         first_offset = kur_farki.l10n_tr_kur_farki_offset_move_id
         kur_farki.button_draft()
         self.assertFalse(kur_farki.l10n_tr_kur_farki_offset_move_id)
-        self.assertEqual(first_offset.payment_state if first_offset.is_invoice() else first_offset.reversal_move_ids.state, "posted")
+        reversal = self.env["account.move"].search([("reversed_entry_id", "=", first_offset.id)])
+        self.assertEqual(reversal.state, "posted")
         kur_farki.action_post()
         moves = self.env["account.move"].search([("company_id", "=", self.company.id), ("state", "=", "posted")])
         self.assertEqual(self._balance(self.gain, moves), -3000)

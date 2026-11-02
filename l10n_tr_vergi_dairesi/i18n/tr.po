@@ -1,0 +1,137 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_vergi_dairesi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-02 04:31+0000\n"
+"PO-Revision-Date: 2026-11-02 04:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: Odoo Türkiye\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__code
+msgid "Code"
+msgstr "Kod"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,help:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__code
+msgid "Code of the tax office."
+msgstr "Vergi dairesinin kodu."
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model,name:l10n_tr_vergi_dairesi.model_res_company
+msgid "Companies"
+msgstr "Şirketler"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model,name:l10n_tr_vergi_dairesi.model_res_partner
+msgid "Contact"
+msgstr "Kontak"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_res_company__l10n_tr_country_code
+msgid "Country Code"
+msgstr "Ülke Kodu"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__display_name
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_res_company__display_name
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Görünen Ad"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__id
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_res_company__id
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__name
+msgid "Name"
+msgstr "Ad"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__state_id
+#: model_terms:ir.ui.view,arch_db:l10n_tr_vergi_dairesi.l10n_tr_tax_office_view_search
+msgid "Province"
+msgstr "İl"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__state_code
+msgid "State Code"
+msgstr "İl Kodu"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_res_company__l10n_tr_tax_office_id
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_res_partner__l10n_tr_tax_office_id
+#: model:ir.model.fields,field_description:l10n_tr_vergi_dairesi.field_res_users__l10n_tr_tax_office_id
+msgid "Tax Office"
+msgstr "Vergi Dairesi"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.actions.act_window,name:l10n_tr_vergi_dairesi.action_l10n_tr_tax_office
+#: model:ir.ui.menu,name:l10n_tr_vergi_dairesi.menu_l10n_tr_tax_office
+#: model_terms:ir.ui.view,arch_db:l10n_tr_vergi_dairesi.l10n_tr_tax_office_view_list
+msgid "Tax Offices"
+msgstr "Vergi Daireleri"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,help:l10n_tr_vergi_dairesi.field_res_company__l10n_tr_country_code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+"İki harfli ISO ülke kodu.\n"
+"Hızlı arama için bu alanı kullanabilirsiniz."
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,help:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__state_id
+msgid "The Turkish province (il) of the tax office."
+msgstr "Vergi dairesinin bulunduğu il."
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,help:l10n_tr_vergi_dairesi.field_l10n_tr_tax_office__state_code
+msgid "The state code."
+msgstr "İl kodu."
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model,name:l10n_tr_vergi_dairesi.model_l10n_tr_tax_office
+msgid "Turkish Tax Office"
+msgstr "Türkiye Vergi Dairesi"
+
+#. module: l10n_tr_vergi_dairesi
+#: model:ir.model.fields,help:l10n_tr_vergi_dairesi.field_res_company__l10n_tr_tax_office_id
+#: model:ir.model.fields,help:l10n_tr_vergi_dairesi.field_res_partner__l10n_tr_tax_office_id
+#: model:ir.model.fields,help:l10n_tr_vergi_dairesi.field_res_users__l10n_tr_tax_office_id
+msgid "Turkish tax office (vergi dairesi) where the partner is registered."
+msgstr "Kişinin kayıtlı olduğu vergi dairesi."

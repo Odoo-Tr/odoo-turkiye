@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="l10n_tr_public_holiday_wizard_view_form" model="ir.ui.view">
+        <field name="name">l10n_tr.public.holiday.wizard.form</field>
+        <field name="model">l10n_tr.public.holiday.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Load Turkish Public Holidays">
+                <p class="text-muted">
+                    National and public holidays (Law 2429) and the Ramazan and Kurban Bayramı dates published
+                    by Diyanet. Holidays that already exist are skipped.
+                </p>
+                <group>
+                    <field name="year_from"/>
+                    <field name="year_to"/>
+                    <field name="company_ids" widget="many2many_tags" groups="base.group_multi_company"/>
+                </group>
+                <footer>
+                    <button name="action_load" type="object" string="Load Holidays" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_l10n_tr_public_holiday_wizard" model="ir.actions.act_window">
+        <field name="name">Turkish Public Holidays</field>
+        <field name="res_model">l10n_tr.public.holiday.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_l10n_tr_public_holiday_wizard" action="action_l10n_tr_public_holiday_wizard"
+              parent="hr_holidays.menu_hr_holidays_configuration" sequence="50"/>
+</odoo>

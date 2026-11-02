@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fx_revaluation_wizard_view_form" model="ir.ui.view">
+        <field name="name">l10n_tr.fx.revaluation.wizard.form</field>
+        <field name="model">l10n_tr.fx.revaluation.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Foreign Currency Revaluation">
+                <p class="text-muted">
+                    Values the open foreign currency items at the company's rate on the revaluation date
+                    and books the difference to the exchange gain or loss account. No VAT is due on
+                    revaluation differences.
+                </p>
+                <group>
+                    <group>
+                        <field name="date"/>
+                        <field name="journal_id"/>
+                        <field name="company_id" invisible="1"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                    <group>
+                        <field name="include_partners"/>
+                        <field name="include_liquidity"/>
+                        <field name="reverse"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_revalue" type="object" string="Revalue" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_fx_revaluation_wizard" model="ir.actions.act_window">
+        <field name="name">Foreign Currency Revaluation</field>
+        <field name="res_model">l10n_tr.fx.revaluation.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_fx_revaluation_wizard" action="action_fx_revaluation_wizard"
+              parent="account.menu_finance_entries" sequence="80" groups="account.group_account_manager"/>
+</odoo>

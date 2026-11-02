@@ -1,0 +1,2 @@
+id,name,model_id,group_id/id,operation,domain
+access_l10n_tr_fx_revaluation_wizard,l10n_tr.fx.revaluation.wizard,l10n_tr.fx.revaluation.wizard,account.group_account_manager,crud,

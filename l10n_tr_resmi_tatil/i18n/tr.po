@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_resmi_tatil
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-02 04:31+0000\n"
+"PO-Revision-Date: 2026-11-02 04:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: Odoo Türkiye\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_resmi_tatil
+#. odoo-python
+#: code:addons/l10n_tr_resmi_tatil/wizard/l10n_tr_public_holiday_wizard.py:0
+msgid "%s public holidays created."
+msgstr "%s resmi tatil oluşturuldu."
+
+#. module: l10n_tr_resmi_tatil
+#: model_terms:ir.ui.view,arch_db:l10n_tr_resmi_tatil.l10n_tr_public_holiday_wizard_view_form
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_l10n_tr_public_holiday_wizard__company_ids
+msgid "Company"
+msgstr "Şirket"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_l10n_tr_public_holiday_wizard__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_l10n_tr_public_holiday_wizard__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_l10n_tr_public_holiday_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_resource_calendar_leaves__display_name
+msgid "Display Name"
+msgstr "Görünen Ad"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_l10n_tr_public_holiday_wizard__id
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_resource_calendar_leaves__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_l10n_tr_public_holiday_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_l10n_tr_public_holiday_wizard__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: l10n_tr_resmi_tatil
+#: model_terms:ir.ui.view,arch_db:l10n_tr_resmi_tatil.l10n_tr_public_holiday_wizard_view_form
+msgid "Load Holidays"
+msgstr "Tatilleri Yükle"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model,name:l10n_tr_resmi_tatil.model_l10n_tr_public_holiday_wizard
+#: model_terms:ir.ui.view,arch_db:l10n_tr_resmi_tatil.l10n_tr_public_holiday_wizard_view_form
+msgid "Load Turkish Public Holidays"
+msgstr "Türkiye Resmi Tatillerini Yükle"
+
+#. module: l10n_tr_resmi_tatil
+#: model_terms:ir.ui.view,arch_db:l10n_tr_resmi_tatil.l10n_tr_public_holiday_wizard_view_form
+msgid ""
+"National and public holidays (Law 2429) and the Ramazan and Kurban Bayramı dates published\n"
+"                    by Diyanet. Holidays that already exist are skipped."
+msgstr ""
+"Ulusal bayram ve genel tatiller (2429 sayılı Kanun) ile Diyanet'in yayımladığı Ramazan ve Kurban\n"
+"                    Bayramı tarihleri. Zaten var olan tatiller atlanır."
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model,name:l10n_tr_resmi_tatil.model_resource_calendar_leaves
+msgid "Resource Time Off Detail"
+msgstr "Kaynak İzin Ayrıntısı"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.actions.act_window,name:l10n_tr_resmi_tatil.action_l10n_tr_public_holiday_wizard
+#: model:ir.ui.menu,name:l10n_tr_resmi_tatil.menu_l10n_tr_public_holiday_wizard
+msgid "Turkish Public Holidays"
+msgstr "Türkiye Resmi Tatilleri"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_l10n_tr_public_holiday_wizard__year_from
+msgid "Year From"
+msgstr "Başlangıç Yılı"
+
+#. module: l10n_tr_resmi_tatil
+#: model:ir.model.fields,field_description:l10n_tr_resmi_tatil.field_l10n_tr_public_holiday_wizard__year_to
+msgid "Year To"
+msgstr "Bitiş Yılı"

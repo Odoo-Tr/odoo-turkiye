@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_tcmb_rates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-30 18:47+0000\n"
+"PO-Revision-Date: 2026-10-30 18:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: Odoo Türkiye\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_tcmb_rates
+#. odoo-python
+#: code:addons/l10n_tr_tcmb_rates/models/res_config_settings.py:0
+msgid "%(count)s rates saved from the bulletin of %(date)s."
+msgstr "%(date)s tarihli bültenden %(count)s kur kaydedildi."
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_company__tcmb_next_day
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_config_settings__tcmb_next_day
+msgid "Apply rates from the next day"
+msgstr "Kuru ertesi günden geçerli yap"
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields.selection,name:l10n_tr_tcmb_rates.selection__res_company__tcmb_rate_type__banknotebuying
+msgid "Banknote buying"
+msgstr "Efektif alış"
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields.selection,name:l10n_tr_tcmb_rates.selection__res_company__tcmb_rate_type__banknoteselling
+msgid "Banknote selling"
+msgstr "Efektif satış"
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model,name:l10n_tr_tcmb_rates.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model,name:l10n_tr_tcmb_rates.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: l10n_tr_tcmb_rates
+#. odoo-python
+#: code:addons/l10n_tr_tcmb_rates/models/res_company.py:0
+msgid "Could not reach the TCMB rates service: %s"
+msgstr "TCMB kurlarına ulaşılamadı: %s"
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_company__display_name
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_tr_tcmb_rates
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tcmb_rates.res_config_settings_view_form_tcmb
+msgid ""
+"Fetch rates from the indicative rates bulletin of the Central Bank of the "
+"Republic of Türkiye."
+msgstr "Kurları TCMB gösterge kurları bülteninden alır."
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields.selection,name:l10n_tr_tcmb_rates.selection__res_company__tcmb_rate_type__forexbuying
+msgid "Forex buying"
+msgstr "Döviz alış"
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields.selection,name:l10n_tr_tcmb_rates.selection__res_company__tcmb_rate_type__forexselling
+msgid "Forex selling"
+msgstr "Döviz satış"
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_company__id
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields,help:l10n_tr_tcmb_rates.field_res_company__tcmb_auto_update
+#: model:ir.model.fields,help:l10n_tr_tcmb_rates.field_res_config_settings__tcmb_auto_update
+msgid ""
+"If enabled, currency rates are fetched daily from the indicative rates "
+"bulletin of the Central Bank of the Republic of Türkiye (TCMB)."
+msgstr "Açıksa döviz kurları her gün TCMB'nin gösterge kurları bülteninden alınır."
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_company__tcmb_last_update
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_config_settings__tcmb_last_update
+msgid "Last TCMB update"
+msgstr "Son TCMB güncellemesi"
+
+#. module: l10n_tr_tcmb_rates
+#. odoo-python
+#: code:addons/l10n_tr_tcmb_rates/models/res_company.py:0
+msgid ""
+"TCMB does not publish a rate for the currency of %(company)s (%(currency)s)."
+msgstr "TCMB, %(company)s şirketinin para birimi (%(currency)s) için kur yayınlamıyor."
+
+#. module: l10n_tr_tcmb_rates
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tcmb_rates.res_config_settings_view_form_tcmb
+msgid "TCMB exchange rates"
+msgstr "TCMB döviz kurları"
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields,help:l10n_tr_tcmb_rates.field_res_company__tcmb_next_day
+#: model:ir.model.fields,help:l10n_tr_tcmb_rates.field_res_config_settings__tcmb_next_day
+msgid ""
+"TCMB publishes its rates at 15:30 on business days and they are used for the"
+" following day. If enabled, the bulletin of day D is saved as the rate of "
+"D+1; on weekends and holidays the last published rate stays in effect."
+msgstr "TCMB kurları her iş günü 15.30'da açıklanır ve uygulamada bir sonraki gün için kullanılır. Açıksa D gününün bülteni D+1 tarihli kur olarak kaydedilir; hafta sonu ve tatillerde son açıklanan kur geçerli kalır."
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_company__tcmb_rate_type
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_config_settings__tcmb_rate_type
+msgid "TCMB rate type"
+msgstr "TCMB kur türü"
+
+#. module: l10n_tr_tcmb_rates
+#. odoo-python
+#: code:addons/l10n_tr_tcmb_rates/models/res_config_settings.py:0
+msgid "TCMB rates updated"
+msgstr "TCMB kurları güncellendi"
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.actions.server,name:l10n_tr_tcmb_rates.ir_cron_tcmb_update_rates_ir_actions_server
+msgid "TCMB: update currency rates"
+msgstr "TCMB: döviz kurlarını güncelle"
+
+#. module: l10n_tr_tcmb_rates
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_company__tcmb_auto_update
+#: model:ir.model.fields,field_description:l10n_tr_tcmb_rates.field_res_config_settings__tcmb_auto_update
+msgid "Update TCMB rates automatically"
+msgstr "TCMB kurlarını otomatik güncelle"
+
+#. module: l10n_tr_tcmb_rates
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tcmb_rates.res_config_settings_view_form_tcmb
+msgid "Update rates now"
+msgstr "Kurları şimdi güncelle"

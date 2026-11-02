@@ -1,0 +1,3 @@
+"id","name","code","account_type","reconcile","name@tr"
+"tr360001","Income Tax Withholding Payable","360001","liability_current","False","Ödenecek Gelir Vergisi Stopajı"
+"tr193001","Income Tax Withheld by Customers","193001","asset_current","False","Peşin Ödenen Gelir Vergisi Stopajı"

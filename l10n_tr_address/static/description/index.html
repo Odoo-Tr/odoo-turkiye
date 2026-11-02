@@ -1,0 +1,66 @@
+<section class="container" style="max-width: 980px; font-size: 15px; line-height: 1.6; color: #202020;">
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2 style="font-weight: 700; margin-bottom: 6px;">Turkish Districts (&#304;l&#231;e)</h2>
+            <p class="lead" style="color: #6F6470;">
+                Turkish addresses are written as district and province: "Kad&#305;k&#246;y/&#304;stanbul". Odoo knows the
+                81 provinces but not the 973 districts, so the city is free text and gets typed in many ways.
+                This module adds every district and turns the city into a choice that follows the province.
+            </p>
+            <p style="padding: 12px 16px; border-left: 4px solid #883080; background: #F6F1F5; border-radius: 8px;">
+                Cafera&#287;a Mah. Moda Cad. No: 12<br/>34710 <b>Kad&#305;k&#246;y/&#304;stanbul</b><br/>T&#252;rkiye
+            </p>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <h4 style="font-weight: 700;">Features</h4>
+            <ul>
+                <li>All 973 districts of the 81 provinces, linked to Odoo's provinces.</li>
+                <li>On contacts, choosing a province limits the district list to that province; choosing a district fills in the province.</li>
+                <li>Turkish address layout on documents: postcode, then "District/Province".</li>
+                <li>Existing contacts are matched to their district on install. "KARSIYAKA", "Kar&#351;&#305;yaka" and "Sar&#305;yer / &#304;stanbul" are all recognised.</li>
+                <li>"Match Turkish districts" in the contact list's Actions menu runs the same matching on imported contacts.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4 style="font-weight: 700;">How it works</h4>
+            <ol>
+                <li>Install the module. T&#252;rkiye is set to use the district list, and existing contacts are matched.</li>
+                <li>On a contact, pick the country and the province, then the district.</li>
+                <li>A name used by several provinces, such as "Merkez", is only matched when the province is known.</li>
+            </ol>
+            <p>Districts can be reviewed in <i>Contacts &gt; Configuration &gt; Localization &gt; Cities</i>.</p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <h4 style="font-weight: 700;">Contact form</h4>
+            <img src="screenshot_contact.png" class="img-fluid" style="border: 1px solid #E6DCE3; border-radius: 10px;" alt="District list filtered by province"/>
+        </div>
+    </div>
+    <div class="row mt-4 mb-4">
+        <div class="col-12">
+            <h4 style="font-weight: 700;">Compatibility and support</h4>
+            <p>
+                Odoo 17.0 (tested on Community). Depends on <code>contacts</code> and <code>base_address_extended</code>. No external service
+                is used; the district list is shipped with the module. Licensed under LGPL-3. Questions and
+                bug reports: <a href="mailto:destek@odoo-tr.com">destek@odoo-tr.com</a>
+            </p>
+        </div>
+    </div>
+    <div class="row mt-2 mb-4" lang="tr">
+        <div class="col-12" style="border-top: 1px solid #E6DCE3; padding-top: 24px;">
+            <h3 style="font-weight: 700;">T&#252;rk&#231;e a&#231;&#305;klama</h3>
+            <p>Odoo 81 ili tan&#305;r ama il&#231;eleri tan&#305;maz; &#351;ehir alan&#305; serbest metin oldu&#287;u i&#231;in il&#231;e herkes taraf&#305;ndan farkl&#305; yaz&#305;l&#305;r. Bu mod&#252;l 973 il&#231;enin tamam&#305;n&#305; ekler ve il&#231;eyi, se&#231;ilen ile g&#246;re s&#252;z&#252;len bir listeye &#231;evirir.</p>
+            <ul>
+                <li>81 ilin 973 il&#231;esi, Odoo'daki illere ba&#287;l&#305; olarak gelir.</li>
+                <li>Ki&#351;i kart&#305;nda il se&#231;ilince yaln&#305;z o ilin il&#231;eleri listelenir; il&#231;e se&#231;ilince il kendili&#287;inden dolar.</li>
+                <li>Belgelerde T&#252;rk adres d&#252;zeni: posta kodu ve "&#304;l&#231;e/&#304;l".</li>
+                <li>Kurulumda mevcut ki&#351;iler il&#231;eleriyle e&#351;le&#351;tirilir. "KARSIYAKA", "Kar&#351;&#305;yaka" ve "Sar&#305;yer / &#304;stanbul" gibi yaz&#305;mlar tan&#305;n&#305;r. "Merkez" gibi birden &#231;ok ilde olan adlar yaln&#305;z il belliyse e&#351;le&#351;tirilir.</li>
+                <li>Ki&#351;i listesindeki &#304;&#351;lemler men&#252;s&#252;nde "&#304;l&#231;eleri e&#351;le&#351;tir" ile i&#231;e aktar&#305;lan ki&#351;iler de e&#351;le&#351;tirilebilir.</li>
+            </ul>
+            <p>Sorular ve hata bildirimleri: <a href="mailto:destek@odoo-tr.com">destek@odoo-tr.com</a></p>
+        </div>
+    </div>
+</section>

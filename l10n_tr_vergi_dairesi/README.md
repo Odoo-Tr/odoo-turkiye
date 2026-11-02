@@ -14,9 +14,9 @@ Türkiye'deki 1.046 vergi dairesi ve malmüdürlüğünü iline göre Odoo'ya ek
 - Liste **Kişiler → Yapılandırma → Yerelleştirme → Vergi Daireleri**'nden görüntülenip düzenlenebilir.
 - Ülkesi Türkiye olmayan kişilerde alan gizlenir.
 
-## Odoo 20
+## Nilvera e-Fatura ve Odoo 20
 
-Odoo 20'de vergi daireleri Odoo'nun kendi Türkiye yerelleştirmesinde (`l10n_tr`) hazır geldiği için bu modül 15.0–19.0 içindir. Model ve alan adları Odoo 20'dekilerle aynıdır (`l10n_tr.tax.office`, `l10n_tr_tax_office_id`).
+Odoo 18 ve 19'da Nilvera e-Fatura'nın genişletilmiş modülü (`l10n_tr_nilvera_einvoice_extended`) kuruluysa vergi daireleri onunla zaten gelir; bu modül onunla birlikte kurulamaz. Odoo 20'de vergi daireleri Odoo'nun kendi Türkiye yerelleştirmesinde (`l10n_tr`) hazır geldiği için bu modül 15.0–19.0 içindir. Model ve alan adları Odoo 20'dekilerle aynıdır (`l10n_tr.tax.office`, `l10n_tr_tax_office_id`).
 
 ## Kaynak ve lisans
 

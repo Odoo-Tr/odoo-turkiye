@@ -8,6 +8,8 @@
     "support": "destek@odoo-tr.com",
     "license": "LGPL-3",
     "depends": ["contacts"],
+    # Odoo 18 and 19 ship the same field with the Nilvera e-invoice extension
+    "excludes": ["l10n_tr_nilvera_einvoice_extended"],
     "data": [
         "security/ir.model.access.csv",
         "data/l10n_tr.tax.office.csv",

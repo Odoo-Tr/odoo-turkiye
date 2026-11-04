@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_trial_balance" model="report.paperformat">
+        <field name="name">Turkish Trial Balance (A4 landscape)</field>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">45</field>
+        <field name="margin_bottom">18</field>
+        <field name="margin_left">8</field>
+        <field name="margin_right">8</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">40</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_financial_statement" model="ir.actions.report">
+        <field name="name">Turkish Financial Statement</field>
+        <field name="model">l10n_tr.financial.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">l10n_tr_mali_tablolar.report_financial_statement</field>
+        <field name="print_report_name">'%s_%s' % ('Bilanco' if object.report_type == 'bilanco' else 'Gelir_Tablosu', object.date_to)</field>
+    </record>
+
+    <record id="action_report_trial_balance" model="ir.actions.report">
+        <field name="name">Turkish Trial Balance</field>
+        <field name="model">l10n_tr.financial.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">l10n_tr_mali_tablolar.report_trial_balance</field>
+        <field name="paperformat_id" ref="paperformat_trial_balance"/>
+        <field name="print_report_name">'Mizan_%s' % object.date_to</field>
+    </record>
+
+    <template id="report_statement_body">
+        <style>
+            .l10n-tr-fs { font-size: 9.5pt; color: #1d1d1f; }
+            .l10n-tr-fs .fs-head { border-bottom: 2px solid #1d1d1f; padding-bottom: 6px; margin-bottom: 10px; }
+            .l10n-tr-fs .fs-title { font-size: 20pt; font-weight: 700; letter-spacing: 0.5px; line-height: 1.05; margin: 0; }
+            .l10n-tr-fs .fs-meta { color: #555; margin-top: 4px; }
+            .l10n-tr-fs .fs-meta span + span:before { content: "  |  "; color: #aaa; }
+            .l10n-tr-fs table { width: 100%; border-collapse: collapse; }
+            .l10n-tr-fs table, .l10n-tr-fs thead, .l10n-tr-fs tbody, .l10n-tr-fs tr, .l10n-tr-fs td, .l10n-tr-fs th { border: 0 !important; background: transparent; }
+            .l10n-tr-fs table.fs tbody td { border-bottom: 1px solid #ecebe6 !important; }
+            .l10n-tr-fs table.fs th { font-weight: 600; text-align: right; border-bottom: 1px solid #1d1d1f !important; padding: 3px 6px; vertical-align: bottom; }
+            .l10n-tr-fs table.fs th.fs-label, .l10n-tr-fs table.fs th.fs-code { text-align: left; }
+            .l10n-tr-fs table.fs td { padding: 1.5px 6px; vertical-align: top; }
+            .l10n-tr-fs td.fs-num { text-align: right; white-space: nowrap; }
+            .l10n-tr-fs td.fs-code { color: #777; white-space: nowrap; width: 1%; }
+            .l10n-tr-fs table.fs tr.fs-side td { font-size: 11pt; font-weight: 700; padding-top: 10px; border-bottom: 1px solid #1d1d1f !important; }
+            .l10n-tr-fs table.fs tr.fs-section td { font-weight: 700; background-color: #efeee9 !important; padding-top: 4px; padding-bottom: 4px; }
+            .l10n-tr-fs tr.fs-group td { font-weight: 600; padding-top: 5px; }
+            .l10n-tr-fs tr.fs-group td.fs-label { padding-left: 14px; }
+            .l10n-tr-fs tr.fs-line td.fs-label { padding-left: 28px; }
+            .l10n-tr-fs tr.fs-sub td { color: #555; font-size: 8.5pt; }
+            .l10n-tr-fs tr.fs-sub td.fs-label { padding-left: 22px; }
+            .l10n-tr-fs table.fs tr.fs-subtotal td { font-weight: 700; border-top: 1px solid #999 !important; }
+            .l10n-tr-fs table.fs tr.fs-total td { font-weight: 700; border-top: 1px solid #1d1d1f !important; border-bottom: 3px double #1d1d1f !important; padding-top: 4px; padding-bottom: 4px; }
+            .l10n-tr-fs tr { page-break-inside: avoid; }
+            .l10n-tr-fs .fs-warning { border-left: 3px solid #b3261e; padding: 4px 8px; margin: 10px 0; color: #b3261e; }
+            .l10n-tr-fs .fs-notes { margin-top: 10px; color: #555; font-size: 8.5pt; }
+            .l10n-tr-fs .fs-sign { margin-top: 8px; width: 100%; page-break-inside: avoid; }
+            .l10n-tr-fs .fs-sign td { width: 50%; padding-top: 22px; color: #555; font-size: 8.5pt; }
+            .l10n-tr-fs .fs-sign .fs-line-sign { border-top: 1px solid #999; width: 70%; padding-top: 4px; }
+            .l10n-tr-fs .fs-sign tr { border: 0 !important; }
+        </style>
+        <div class="page l10n-tr-fs">
+            <div class="fs-head">
+                <p class="fs-title" t-out="report['title']"/>
+                <div class="fs-meta">
+                    <span t-out="report['company_name']"/>
+                    <span t-if="report['vat']">Tax ID <t t-out="report['vat']"/></span>
+                    <span t-out="report['period']"/>
+                    <span><t t-out="report['currency']"/></span>
+                </div>
+            </div>
+            <div t-foreach="report['warnings']" t-as="warning" class="fs-warning" t-out="warning"/>
+            <table class="fs o_ignore_layout_styling">
+                <thead>
+                    <tr>
+                        <th class="fs-code" t-if="report['kind'] == 'mizan'">Code</th>
+                        <th class="fs-label"/>
+                        <th t-foreach="report['columns']" t-as="column" t-out="column"/>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="report['rows']" t-as="row" t-att-class="'fs-' + row['style']">
+                        <td class="fs-code" t-if="report['kind'] == 'mizan'" t-out="row['code']"/>
+                        <td class="fs-label" t-out="row['label']"/>
+                        <td t-foreach="row['values']" t-as="value" class="fs-num"
+                            t-out="fmt(value, blank_zero=row['style'] in ('line', 'sub'))"/>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="fs-notes" t-if="report.get('opening_note')" t-out="report['opening_note']"/>
+            <div class="fs-notes" t-if="report['notes']">
+                <strong>Balances outside the statement</strong>
+                <div t-foreach="report['notes']" t-as="note" t-out="note"/>
+            </div>
+            <p class="fs-notes" t-if="report['kind'] != 'mizan'">
+                Prepared in the order of the Turkish uniform chart of accounts and the Accounting System Application General Communiqué.
+                Deduction items (-) are shown in parentheses.
+            </p>
+            <table class="fs-sign o_ignore_layout_styling">
+                <tr>
+                    <td><div class="fs-line-sign">Prepared by</div></td>
+                    <td><div class="fs-line-sign">Approved by</div></td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+    <template id="report_financial_statement">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-call="l10n_tr_mali_tablolar.report_statement_body"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_trial_balance">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-call="l10n_tr_mali_tablolar.report_statement_body"/>
+            </t>
+        </t>
+    </template>
+</odoo>

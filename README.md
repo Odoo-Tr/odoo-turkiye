@@ -14,6 +14,7 @@ Türkiye'deki şirketlerin ihtiyaçları için açık kaynak Odoo modülleri. [O
 | [`l10n_tr_resmi_tatil`](l10n_tr_resmi_tatil) | Ulusal bayramlar, genel tatiller ve 2025–2030 dini bayramları; arife ve 28 Ekim yarım günleri |
 | [`l10n_tr_yillik_izin`](l10n_tr_yillik_izin) | İş Kanunu md. 53'e göre kıdemden yıllık izin hakkı; her hizmet yılında otomatik tahsis |
 | [`l10n_tr_banka`](l10n_tr_banka) | 67 banka, EFT ve BIC kodlarıyla; Türk IBAN'ı girilince banka kendiliğinden seçilir |
+| [`l10n_tr_mali_tablolar`](l10n_tr_mali_tablolar) | Tek Düzen Hesap Planı sıralamasıyla mizan, ayrıntılı bilanço ve ayrıntılı gelir tablosu; PDF ve Excel |
 
 Sırada neler var: [yol haritası](ROADMAP.md) · [odoo-tr.com/p/3-yol-haritasi](https://odoo-tr.com/p/3-yol-haritasi)
 
@@ -46,6 +47,7 @@ Her Odoo sürümü ayrı bir daldadır:
 | `l10n_tr_banka` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | `l10n_tr_vergi_dairesi` | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | `l10n_tr_account_group` | ✓ | – | – | – | – | – |
+| `l10n_tr_mali_tablolar` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 
 ## Kurulum
 

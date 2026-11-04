@@ -1,6 +1,6 @@
 # Yol haritası
 
-*Son güncelleme: 2 Kasım 2026*
+*Son güncelleme: 4 Kasım 2026*
 
 Odoo Türkiye'nin açık kaynak Türkiye modüllerinde neyin yayında olduğu, sırada ne olduğu ve neyi neden yapmadığımız.
 
@@ -19,20 +19,20 @@ Community sürümünde kurulabilir. Her modülün çalıştığı Odoo sürümle
 - **[Yıllık İzin](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_yillik_izin)** (`l10n_tr_yillik_izin`): İş Kanunu md. 53'e göre kıdemden 14/20/26 gün yıllık izin; her hizmet yılı dolunca otomatik tahsis. Odoo 15–20.
 - **[Türk Bankaları](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_banka)** (`l10n_tr_banka`): 67 banka, EFT ve BIC kodlarıyla; Türk IBAN'ı girilince banka kendiliğinden seçilir. Odoo 15–20.
 - **[Vergi Daireleri](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_vergi_dairesi)** (`l10n_tr_vergi_dairesi`): 1.046 vergi dairesi; kişi ve şirkette ile göre süzülen Vergi Dairesi alanı. Odoo 15–19 (Odoo 20'de Odoo'nun kendisinde var).
+- **[Mizan, Bilanço ve Gelir Tablosu](https://github.com/Odoo-Tr/odoo-turkiye/tree/19.0/l10n_tr_mali_tablolar)** (`l10n_tr_mali_tablolar`): Tek Düzen Hesap Planı sıralamasıyla mizan, ayrıntılı bilanço ve ayrıntılı gelir tablosu; PDF ve Excel, önceki yılla karşılaştırmalı. Odoo 15–20.
 - **[Hesap Grupları (Odoo 15)](https://github.com/Odoo-Tr/odoo-turkiye/tree/15.0/l10n_tr_account_group)** (`l10n_tr_account_group`): Odoo 15'in Türkiye hesap planında olmayan Tek Düzen Hesap Planı grupları. Yalnız Odoo 15.
 
 ## Sırada
 
 Bu sırayla geliştirilecek.
 
-1. **Mizan, bilanço ve gelir tablosu** · Orta: Tek Düzen Hesap Planı'na göre finansal raporlar, Community için.
+1. **Çek ve senet portföyü** · Büyük: Çek ve senet girişi, ciro, tahsil ve portföy takibi.
 
 ## Planlanıyor
 
 Kapsamı büyük; tasarım aşamasında.
 
 - **e-Fatura ve e-Arşiv (Community)** · Büyük: Odoo 20 ile Nilvera entegrasyonu yalnız Enterprise'da kaldı. Community için e-Fatura ve e-Arşiv gönderimi.
-- **Çek ve senet portföyü** · Büyük: Çek ve senet girişi, ciro, tahsil ve portföy takibi.
 
 ## Değerlendiriliyor
 

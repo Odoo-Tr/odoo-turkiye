@@ -1,0 +1,57 @@
+<section class="container" style="max-width: 980px; font-size: 15px; line-height: 1.6; color: #202020;">
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2 style="font-weight: 700; margin-bottom: 6px;">TR Financial Statements</h2>
+            <p class="lead" style="color: #6F6470;">Prints the trial balance (mizan), the detailed balance sheet and the detailed income statement in the order of the Turkish uniform chart of accounts (Tek D&#252;zen Hesap Plan&#305;), as PDF and Excel. Odoo Community has no financial reports of its own; this module adds the three statements Turkish accountants and tax returns need.</p>
+            <p style="padding: 12px 16px; border-left: 4px solid #883080; background: #F6F1F5; border-radius: 8px;">Balance sheet on 31.12.2026: <b>I. D&#246;nen Varl&#305;klar</b> with A. Haz&#305;r De&#287;erler, 1. Kasa, 2. Al&#305;nan &#199;ekler... and contra accounts such as <b>257 Birikmi&#351; Amortismanlar (-)</b> shown in parentheses.</p>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <h4 style="font-weight: 700;">Features</h4>
+            <ul>
+                <li><b>Trial balance:</b> opening, period and total debit and credit, debit and credit balance per main account (100, 120...), optionally with sub accounts. Income statement accounts start from the fiscal year.</li>
+                <li><b>Balance sheet:</b> sections I to V, groups A, B, C and numbered lines as in the official form, with the previous year beside it.</li>
+                <li><b>Income statement:</b> A. Br&#252;t Sat&#305;&#351;lar to D&#246;nem Net K&#226;r&#305; veya Zarar&#305;, with all subtotals, compared with the same period of the previous year.</li>
+                <li>Without closing entries the result of the year is shown as the net profit of the period, and earlier years as retained earnings, so the balance sheet always balances.</li>
+                <li>Closing entries (690 / 692) are left out of the income statement, so it can be printed after the year is closed.</li>
+                <li>Cost accounts not yet transferred (7/A groups 71-78, 7/B 79) are shown on their own lines in the income statement.</li>
+                <li>Posted entries only, or with draft entries. Amounts in the company currency, Turkish number format.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4 style="font-weight: 700;">How to use</h4>
+            <ol>
+                <li><i>Accounting &gt; Reporting &gt; Turkish Statements</i>.</li>
+                <li>Choose <i>Trial Balance</i>, <i>Balance Sheet</i> or <i>Income Statement</i>.</li>
+                <li>Set the dates and click <i>Print PDF</i> or <i>Export to Excel</i>.</li>
+            </ol>
+            <p>Accounts are classified by the first three digits of their code, so the chart of accounts has to follow the Turkish uniform chart (Odoo's Turkish chart does). Balances of accounts outside it, of memo accounts (class 9) and of accounts with no place in the forms are listed below the statement. Line order and names follow the Tek D&#252;zen Hesap Plan&#305;; have your accountant review the statements before filing.</p>
+        </div>
+    </div>
+    <div class="row mt-4 mb-4">
+        <div class="col-12">
+            <h4 style="font-weight: 700;">Compatibility and support</h4>
+            <p>
+                Odoo 16.0 (tested on Community). Depends only on <code>account</code>.
+                No external service is used. Licensed under LGPL-3. Questions and bug reports:
+                <a href="mailto:destek@odoo-tr.com">destek@odoo-tr.com</a>
+            </p>
+        </div>
+    </div>
+    <div class="row mt-2 mb-4" lang="tr">
+        <div class="col-12" style="border-top: 1px solid #E6DCE3; padding-top: 24px;">
+            <h3 style="font-weight: 700;">T&#252;rk&#231;e a&#231;&#305;klama</h3>
+            <p>Mizan, ayr&#305;nt&#305;l&#305; bilan&#231;o ve ayr&#305;nt&#305;l&#305; gelir tablosunu Tek D&#252;zen Hesap Plan&#305; s&#305;ralamas&#305;yla PDF ve Excel olarak verir.</p>
+            <ul>
+                <li>Mizan: devir, d&#246;nem ve toplam bor&#231;/alacak, bor&#231; ve alacak bakiyesi; ana hesap ya da alt hesap d&#252;zeyinde.</li>
+                <li>Bilan&#231;o: I-V b&#246;l&#252;mleri, A, B, C gruplar&#305; ve numaral&#305; sat&#305;rlar; &#246;nceki y&#305;l s&#252;tunuyla.</li>
+                <li>Gelir tablosu: Br&#252;t Sat&#305;&#351;lar'dan D&#246;nem Net K&#226;r&#305;'na t&#252;m ara toplamlar; ge&#231;en y&#305;l&#305;n ayn&#305; d&#246;nemiyle kar&#351;&#305;la&#351;t&#305;rmal&#305;.</li>
+                <li>Kapan&#305;&#351; fi&#351;i kesilmemi&#351;se d&#246;nem sonucu 59 grubunda, &#246;nceki y&#305;llar&#305;n sonucu 57/58 grubunda g&#246;sterilir; kapan&#305;&#351; fi&#351;leri (690/692) gelir tablosuna al&#305;nmaz.</li>
+                <li>Yans&#305;t&#305;lmam&#305;&#351; 7/A ve 7/B maliyet hesaplar&#305; gelir tablosunda ayr&#305; sat&#305;rda g&#246;r&#252;n&#252;r.</li>
+                <li><i>Muhasebe &gt; Raporlama &gt; Turkish Statements</i>.</li>
+            </ul>
+            <p>Sorular ve hata bildirimleri: <a href="mailto:destek@odoo-tr.com">destek@odoo-tr.com</a></p>
+        </div>
+    </div>
+</section>

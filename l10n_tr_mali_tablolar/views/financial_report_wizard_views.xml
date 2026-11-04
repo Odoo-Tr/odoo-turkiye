@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="financial_report_wizard_view_trial_balance" model="ir.ui.view">
+        <field name="name">l10n_tr.financial.report.wizard.trial.balance</field>
+        <field name="model">l10n_tr.financial.report.wizard</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <form string="Trial Balance">
+                <p class="text-muted">
+                    Debit and credit totals and balances of every account for the period, in the order of the
+                    Turkish uniform chart of accounts.
+                </p>
+                <group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="company_id" invisible="1"/>
+                        <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="level" widget="radio"/>
+                        <field name="hide_zero"/>
+                        <field name="include_draft"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_print_pdf" type="object" string="Print PDF" class="btn-primary"/>
+                    <button name="action_export_xlsx" type="object" string="Export to Excel" class="btn-secondary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="financial_report_wizard_view_balance_sheet" model="ir.ui.view">
+        <field name="name">l10n_tr.financial.report.wizard.balance.sheet</field>
+        <field name="model">l10n_tr.financial.report.wizard</field>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <form string="Balance Sheet">
+                <p class="text-muted">
+                    Detailed balance sheet in the format of the Accounting System Application General Communiqué.
+                    Income statement accounts not yet closed are shown as the net profit or loss of the period.
+                </p>
+                <group>
+                    <group>
+                        <field name="date_to" string="Balance Sheet Date"/>
+                        <field name="company_id" invisible="1"/>
+                        <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="compare"/>
+                        <field name="include_draft"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_print_pdf" type="object" string="Print PDF" class="btn-primary"/>
+                    <button name="action_export_xlsx" type="object" string="Export to Excel" class="btn-secondary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="financial_report_wizard_view_income_statement" model="ir.ui.view">
+        <field name="name">l10n_tr.financial.report.wizard.income.statement</field>
+        <field name="model">l10n_tr.financial.report.wizard</field>
+        <field name="priority">30</field>
+        <field name="arch" type="xml">
+            <form string="Income Statement">
+                <p class="text-muted">
+                    Detailed income statement in the format of the Accounting System Application General Communiqué.
+                    Closing entries are left out; cost accounts (7/A, 7/B) not yet transferred are shown on their own lines.
+                </p>
+                <group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="company_id" invisible="1"/>
+                        <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="compare"/>
+                        <field name="include_draft"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_print_pdf" type="object" string="Print PDF" class="btn-primary"/>
+                    <button name="action_export_xlsx" type="object" string="Export to Excel" class="btn-secondary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_trial_balance" model="ir.actions.act_window">
+        <field name="name">Trial Balance (Mizan)</field>
+        <field name="res_model">l10n_tr.financial.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="financial_report_wizard_view_trial_balance"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'mizan'}</field>
+    </record>
+
+    <record id="action_balance_sheet" model="ir.actions.act_window">
+        <field name="name">Balance Sheet (Bilanço)</field>
+        <field name="res_model">l10n_tr.financial.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="financial_report_wizard_view_balance_sheet"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'bilanco'}</field>
+    </record>
+
+    <record id="action_income_statement" model="ir.actions.act_window">
+        <field name="name">Income Statement (Gelir Tablosu)</field>
+        <field name="res_model">l10n_tr.financial.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="financial_report_wizard_view_income_statement"/>
+        <field name="target">new</field>
+        <field name="context">{'default_report_type': 'gelir'}</field>
+    </record>
+
+    <menuitem id="menu_l10n_tr_financial_statements" name="Turkish Statements"
+              parent="account.menu_finance_reports" sequence="90" groups="account.group_account_readonly,account.group_account_manager"/>
+    <menuitem id="menu_trial_balance" action="action_trial_balance"
+              parent="menu_l10n_tr_financial_statements" sequence="10"/>
+    <menuitem id="menu_balance_sheet" action="action_balance_sheet"
+              parent="menu_l10n_tr_financial_statements" sequence="20"/>
+    <menuitem id="menu_income_statement" action="action_income_statement"
+              parent="menu_l10n_tr_financial_statements" sequence="30"/>
+</odoo>

@@ -1,0 +1,409 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_mali_tablolar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-04 11:01+0000\n"
+"PO-Revision-Date: 2026-11-04 11:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: Odoo Türkiye\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.report_statement_body
+msgid "<strong>Balances outside the statement</strong>"
+msgstr "<strong>Tablo dışında kalan bakiyeler</strong>"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.report_statement_body
+msgid "Approved by"
+msgstr "Onaylayan"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid ""
+"Assets and liabilities differ by %(amount)s at %(date)s; see the balances "
+"outside the balance sheet below."
+msgstr "%(date)s tarihinde aktif ile pasif arasında %(amount)s fark var; bilanço dışında kalan bakiyeler aşağıda."
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields.selection,name:l10n_tr_mali_tablolar.selection__l10n_tr_financial_report_wizard__report_type__bilanco
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_balance_sheet
+msgid "Balance Sheet"
+msgstr "Bilanço"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.actions.act_window,name:l10n_tr_mali_tablolar.action_balance_sheet
+#: model:ir.ui.menu,name:l10n_tr_mali_tablolar.menu_balance_sheet
+msgid "Balance Sheet (Bilanço)"
+msgstr "Bilanço"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_balance_sheet
+msgid "Balance Sheet Date"
+msgstr "Bilanço Tarihi"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_balance_sheet
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_income_statement
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_trial_balance
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/wizard/financial_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.report_statement_body
+msgid "Code"
+msgstr "Kod"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__compare
+msgid "Compare with the previous year"
+msgstr "Önceki yılla karşılaştır"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Credit Balance"
+msgstr "Alacak Bakiye"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Current Period"
+msgstr "Cari Dönem"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Current Period (%s)"
+msgstr "Cari Dönem (%s)"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Debit Balance"
+msgstr "Borç Bakiye"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_trial_balance
+msgid ""
+"Debit and credit totals and balances of every account for the period, in the order of the\n"
+"                    Turkish uniform chart of accounts."
+msgstr ""
+"Dönemin her hesap için borç ve alacak toplamları ile bakiyeleri, Tek Düzen Hesap Planı\n"
+"                    sıralamasıyla."
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__level
+msgid "Detail"
+msgstr "Ayrıntı"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_balance_sheet
+msgid ""
+"Detailed balance sheet in the format of the Accounting System Application General Communiqué.\n"
+"                    Income statement accounts not yet closed are shown as the net profit or loss of the period."
+msgstr ""
+"Muhasebe Sistemi Uygulama Genel Tebliği biçiminde ayrıntılı bilanço.\n"
+"                    Kapanışı yapılmamış gelir tablosu hesapları dönem net kârı veya zararı olarak gösterilir."
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_income_statement
+msgid ""
+"Detailed income statement in the format of the Accounting System Application General Communiqué.\n"
+"                    Closing entries are left out; cost accounts (7/A, 7/B) not yet transferred are shown on their own lines."
+msgstr ""
+"Muhasebe Sistemi Uygulama Genel Tebliği biçiminde ayrıntılı gelir tablosu.\n"
+"                    Kapanış fişleri alınmaz; yansıtılmamış maliyet hesapları (7/A, 7/B) ayrı satırda gösterilir."
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_statement__display_name
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_report_l10n_tr_mali_tablolar_report_financial_statement__display_name
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_report_l10n_tr_mali_tablolar_report_trial_balance__display_name
+msgid "Display Name"
+msgstr "Görünen Ad"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__date_to
+msgid "End Date"
+msgstr "Bitiş Tarihi"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_balance_sheet
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_income_statement
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_trial_balance
+msgid "Export to Excel"
+msgstr "Excel'e Aktar"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__hide_zero
+msgid "Hide accounts without movement"
+msgstr "Hareketsiz hesapları gizle"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__id
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_statement__id
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_report_l10n_tr_mali_tablolar_report_financial_statement__id
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_report_l10n_tr_mali_tablolar_report_trial_balance__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__include_draft
+msgid "Include draft entries"
+msgstr "Taslak kayıtları dahil et"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields.selection,name:l10n_tr_mali_tablolar.selection__l10n_tr_financial_report_wizard__report_type__gelir
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_income_statement
+msgid "Income Statement"
+msgstr "Gelir Tablosu"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.actions.act_window,name:l10n_tr_mali_tablolar.action_income_statement
+#: model:ir.ui.menu,name:l10n_tr_mali_tablolar.menu_income_statement
+msgid "Income Statement (Gelir Tablosu)"
+msgstr "Gelir Tablosu"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields.selection,name:l10n_tr_mali_tablolar.selection__l10n_tr_financial_report_wizard__level__main
+msgid "Main accounts"
+msgstr "Ana hesaplar"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields.selection,name:l10n_tr_mali_tablolar.selection__l10n_tr_financial_report_wizard__level__detail
+msgid "Main and sub accounts"
+msgstr "Ana ve alt hesaplar"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Net profit (loss) of the period without closing entries"
+msgstr "Dönem net kârı (zararı) - kapanış kaydı yapılmamış"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Opening Credit"
+msgstr "Devir Alacak"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Opening Debit"
+msgstr "Devir Borç"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid ""
+"Opening amounts of income statement accounts start from the fiscal year "
+"start (%s)."
+msgstr "Gelir tablosu hesaplarının devri mali yıl başından (%s) itibaren alınmıştır."
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Period Credit"
+msgstr "Dönem Alacak"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Period Debit"
+msgstr "Dönem Borç"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.report_statement_body
+msgid "Prepared by"
+msgstr "Düzenleyen"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.report_statement_body
+msgid ""
+"Prepared in the order of the Turkish uniform chart of accounts and the Accounting System Application General Communiqué.\n"
+"                Deduction items (-) are shown in parentheses."
+msgstr ""
+"Tek Düzen Hesap Planı ve Muhasebe Sistemi Uygulama Genel Tebliği sıralamasıyla hazırlanmıştır.\n"
+"                İndirim kalemleri (-) parantez içinde gösterilir."
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Previous Period"
+msgstr "Önceki Dönem"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Previous Period (%s)"
+msgstr "Önceki Dönem (%s)"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Previous years' loss without closing entries"
+msgstr "Geçmiş yıllar zararı - kapanış kaydı yapılmamış"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Previous years' profit without closing entries"
+msgstr "Geçmiş yıllar kârı - kapanış kaydı yapılmamış"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_balance_sheet
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_income_statement
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_trial_balance
+msgid "Print PDF"
+msgstr "PDF Yazdır"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__report_type
+msgid "Report Type"
+msgstr "Rapor Türü"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Result of previous years without closing entries"
+msgstr "Kapanış kaydı yapılmamış geçmiş yıllar sonucu"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid ""
+"Some balances have no place in the income statement form and are listed "
+"below."
+msgstr "Bazı bakiyelerin gelir tablosu formunda yeri yok; aşağıda listelenmiştir."
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__date_from
+msgid "Start Date"
+msgstr "Başlangıç Tarihi"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "TOTAL"
+msgstr "TOPLAM"
+
+#. module: l10n_tr_mali_tablolar
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.report_statement_body
+msgid "Tax ID"
+msgstr "VKN"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "The start date must be before the end date."
+msgstr "Başlangıç tarihi bitiş tarihinden önce olmalıdır."
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Total Credit"
+msgstr "Toplam Alacak"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Total Debit"
+msgstr "Toplam Borç"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "Total debit and total credit differ by %s."
+msgstr "Toplam borç ile toplam alacak arasında %s fark var."
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields.selection,name:l10n_tr_mali_tablolar.selection__l10n_tr_financial_report_wizard__report_type__mizan
+#: model_terms:ir.ui.view,arch_db:l10n_tr_mali_tablolar.financial_report_wizard_view_trial_balance
+msgid "Trial Balance"
+msgstr "Mizan"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.actions.act_window,name:l10n_tr_mali_tablolar.action_trial_balance
+#: model:ir.ui.menu,name:l10n_tr_mali_tablolar.menu_trial_balance
+msgid "Trial Balance (Mizan)"
+msgstr "Mizan"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model,name:l10n_tr_mali_tablolar.model_report_l10n_tr_mali_tablolar_report_financial_statement
+msgid "Turkish Balance Sheet and Income Statement"
+msgstr "Türkiye Bilanço ve Gelir Tablosu"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.actions.report,name:l10n_tr_mali_tablolar.action_report_financial_statement
+#: model:ir.model,name:l10n_tr_mali_tablolar.model_l10n_tr_financial_report_wizard
+msgid "Turkish Financial Statement"
+msgstr "Türkiye Mali Tablosu"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model,name:l10n_tr_mali_tablolar.model_l10n_tr_financial_statement
+msgid "Turkish Financial Statements"
+msgstr "Türkiye Mali Tabloları"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.ui.menu,name:l10n_tr_mali_tablolar.menu_l10n_tr_financial_statements
+msgid "Turkish Statements"
+msgstr "Türkiye Mali Tabloları"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.actions.report,name:l10n_tr_mali_tablolar.action_report_trial_balance
+#: model:ir.model,name:l10n_tr_mali_tablolar.model_report_l10n_tr_mali_tablolar_report_trial_balance
+msgid "Turkish Trial Balance"
+msgstr "Türkiye Mizanı"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__xlsx_file
+msgid "Xlsx File"
+msgstr "Excel Dosyası"
+
+#. module: l10n_tr_mali_tablolar
+#: model:ir.model.fields,field_description:l10n_tr_mali_tablolar.field_l10n_tr_financial_report_wizard__xlsx_name
+msgid "Xlsx Name"
+msgstr "Excel Dosya Adı"
+
+#. module: l10n_tr_mali_tablolar
+#. odoo-python
+#: code:addons/l10n_tr_mali_tablolar/models/financial_statement.py:0
+msgid "You are not allowed to access the accounting of %s."
+msgstr "%s şirketinin muhasebesine erişim yetkiniz yok."
